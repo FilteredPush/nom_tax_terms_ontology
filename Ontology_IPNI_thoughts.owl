@@ -1,0 +1,120 @@
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
+
+
+
+Ontology: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl>
+
+
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsJuniorName>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Range: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsJuniorName> some <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#NomenclaturalFact>
+    
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedIn>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authoredBy>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsSeniorName>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Range: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsSeniorName> exactly 1 <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#NomenclaturalFact>
+    
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currentlyInFamily>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Range: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currentlyInFamily> some <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Family>
+    
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#hasTypeSpecimen>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Range: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#hasTypeSpecimen> some <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#TypeSpecimen>
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedOnPages>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#taxonomicName>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#yearPublished>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#version>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authorName>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#typeLocality>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: owl:topDataProperty
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Author>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Family>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#TypeSpecimen>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#UsageFact>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#NomenclaturalFact>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Publication>
+
+    

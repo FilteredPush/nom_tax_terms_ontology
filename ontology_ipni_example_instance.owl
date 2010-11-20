@@ -1,0 +1,188 @@
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
+
+
+Ontology: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl>
+
+Import: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl>
+
+AnnotationProperty: <http://purl.org/dc/elements/1.1/title>
+
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedIn>
+
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authoredBy>
+
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsSeniorName>
+
+
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsJuniorName>
+
+    
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currentlyInFamily>
+
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedOnPages>
+
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#taxonomicName>
+
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#yearPublished>
+
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authorName>
+
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#version>
+
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#typeLocality>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Author>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Family>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#UsageFact>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#NomenclaturalFact>
+
+    
+Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Publication>
+
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#LHBailey>
+
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Author>
+    
+    Facts:  
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authorName>  "L. H. Bailey"@
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Hedrick,_Small_Fruits_N._York>
+
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Publication>
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Contributions_toward_the_Revision_of_the_Eubati_of_Eastern_North_America._V._Arguti>
+
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Publication>
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#ABerger>
+
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Author>
+    
+    Facts:  
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authorName>  "A.Berger"@
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#urn:lsid:ipni.org:names:223391-2:1.2>
+
+    Annotations: 
+        <http://purl.org/dc/elements/1.1/title> "Rubus par"@
+    
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#NomenclaturalFact>
+    
+    Facts:  
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authoredBy>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#LHBailey>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currentlyInFamily>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Rosaceae>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedIn>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Gentes_Herb.>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedOnPages>  "144, ilust. 146"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#taxonomicName>  "Rubus par"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#typeLocality>  "District of Columbia"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#yearPublished>  "1933"@
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#DavisHA_FullerAM_DavisT>
+
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Author>
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#urn:lsid:ipni.org:names:222869-2:1.2urn>
+
+    Annotations: 
+        <http://purl.org/dc/elements/1.1/title> "Rubus ablatus L. H. Bailey"@
+    
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#NomenclaturalFact>
+    
+    Facts:  
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authoredBy>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#LHBailey>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currentlyInFamily>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Rosaceae>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedIn>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Gentes_Herb.>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedOnPages>  "5: 629, fig. 279"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#taxonomicName>  "Rubus ablatus"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#typeLocality>  "Morgan County, Missouri"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#version>  "1.2"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#yearPublished>  "1945"@
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#urn:lsid:ipni.org:names:737965-1>
+
+    Annotations: 
+        <http://purl.org/dc/elements/1.1/title> "Rubus laudatus A.Berger"@
+    
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#NomenclaturalFact>
+    
+    Facts:  
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authoredBy>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#ABerger>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currentlyInFamily>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Rosaceae>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedIn>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Hedrick,_Small_Fruits_N._York>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedOnPages>  "77"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#taxonomicName>  "Rubus laudatus"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#typeLocality>  "Geneva, New York (cultivated)"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#version>  "1.1.2.1.1.2"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#yearPublished>  "1925"@
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Rosaceae>
+
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Family>
+    
+    Facts:  
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#taxonomicName>  "Rosaceae"@
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Gentes_Herb.>
+
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Publication>
+    
+    
+Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Rubus_laudatus_A.Berger_sensu_DavisFullerAndDavis>
+
+    Types: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#UsageFact>
+    
+    Facts:  
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authoredBy>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#DavisHA_FullerAM_DavisT>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedIn>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Contributions_toward_the_Revision_of_the_Eubati_of_Eastern_North_America._V._Arguti>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsSeniorName>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#urn:lsid:ipni.org:names:737965-1>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsJuniorName>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#urn:lsid:ipni.org:names:222869-2:1.2urn>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsJuniorName>  <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#urn:lsid:ipni.org:names:223391-2:1.2>,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedOnPages>  "246"@,
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#yearPublished>  "1969"@
+    
+    

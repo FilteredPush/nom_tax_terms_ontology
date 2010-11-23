@@ -43,6 +43,15 @@ ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomen
         <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#usesNomenclaturalActAsSeniorName> exactly 1 <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#NomenclaturalFact>
     
     
+ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#hasTypeSpecimen>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Range: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#hasTypeSpecimen> some <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#TypeSpecimen>
+    
+    
 ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currentlyInFamily>
 
     SubPropertyOf: 
@@ -52,13 +61,49 @@ ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currently
         <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#currentlyInFamily> some <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Family>
     
     
-ObjectProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#hasTypeSpecimen>
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#catalogNumber>
 
     SubPropertyOf: 
-        owl:topObjectProperty
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#collectionObjectIdentifier>
     
-    Range: 
-        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#hasTypeSpecimen> some <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#TypeSpecimen>
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#version>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#collectionObjectIdentifier>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#catalogNumberSeries>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#typeLocality>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: owl:topDataProperty
+
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#collectionCode>
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#unitIdentifier>
+
+    SubPropertyOf: 
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#collectionObjectIdentifier>
     
     
 DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#publishedOnPages>
@@ -79,26 +124,11 @@ DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#yearPublish
         owl:topDataProperty
     
     
-DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#version>
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    
 DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authorName>
 
     SubPropertyOf: 
         owl:topDataProperty
     
-    
-DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#typeLocality>
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    
-DataProperty: owl:topDataProperty
-
     
 Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Author>
 

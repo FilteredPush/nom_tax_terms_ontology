@@ -213,17 +213,17 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor,_Choosing_Spelling
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor_Choosing_Spelling
 
-:First_Revisor,_Choosing_Spelling rdf:type owl:Class ;
+:First_Revisor_Choosing_Spelling rdf:type owl:Class ;
                                   
                                   rdfs:subClassOf :Replacement_of_a_name .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor,_Chosing_Priority
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor_Chosing_Priority
 
-:First_Revisor,_Chosing_Priority rdf:type owl:Class ;
+:First_Revisor_Chosing_Priority rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :NomenclaturalEventType .
 
@@ -401,9 +401,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Name_in_opus_utique_oppr.
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Name_in_opus_utique_oppr
 
-:Name_in_opus_utique_oppr. rdf:type owl:Class ;
+:Name_in_opus_utique_oppr rdf:type owl:Class ;
                            
                            rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
 
@@ -515,9 +515,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected,_nom._confusum.
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected_nom_confusum
 
-:Rejected,_nom._confusum. rdf:type owl:Class ;
+:Rejected_nom_confusum rdf:type owl:Class ;
                           
                           rdfs:subClassOf :Rejection .
 
@@ -707,49 +707,49 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#nom_nov_ICBN
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#no_novICBN
 
-:nom_nov_ICBN rdf:type owl:Class ;
+:no_novICBN rdf:type owl:Class ;
               
               rdfs:subClassOf :New_scientific_name .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#nom_nov_ICZN
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#no_novICZN
 
-:nom_nov_ICZN rdf:type owl:Class ;
+:no_novICZN rdf:type owl:Class ;
               
               rdfs:subClassOf :Replacement_of_a_name .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#sp._nov.
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#sp_nov
 
-:sp._nov. rdf:type owl:Class ;
+:sp_nov rdf:type owl:Class ;
           
           rdfs:subClassOf :New_scientific_name .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ssp._nov.
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ssp_nov
 
-:ssp._nov. rdf:type owl:Class ;
+:ssp_nov rdf:type owl:Class ;
            
            rdfs:subClassOf :New_scientific_name .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#stat._nov.
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#stat_nov
 
-:stat._nov. rdf:type owl:Class ;
+:stat_nov rdf:type owl:Class ;
             
             rdfs:subClassOf :Change_of_combination .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#var._nov.
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#var_nov
 
-:var._nov. rdf:type owl:Class ;
+:var_nov rdf:type owl:Class ;
            
            rdfs:subClassOf :New_scientific_name .
 

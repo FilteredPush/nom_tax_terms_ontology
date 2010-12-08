@@ -45,12 +45,14 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 #################################################################
 
 
-###  http://www.huh.harvard.edu/ontologies/GNUB_example.owl#urn:lsid:ipni.org:names:737993-1:1.1.2.1
+###  http://www.huh.harvard.edu/ontologies/GNUB_example.owl#Rubus_leesii_Bab_new_species_in_Bab
 
-:urn:lsid:ipni.org:names:737993-1:1.1.2.1 rdf:type <http://www.huh.harvard.edu/ontologies/GNUB.owl#Protonym> ,
-                                                   owl:NamedIndividual ;
-                                          
-                                          <http://purl.org/dc/elements/1.1/subject> "Rubus leesii Bab."^^xsd:string .
+:Rubus_leesii_Bab_new_species_in_Bab rdf:type <http://www.huh.harvard.edu/ontologies/GNUB.owl#Protonym> ,
+                                              owl:NamedIndividual ;
+                                     
+                                     <http://purl.org/dc/elements/1.1/subject> """Rubus leesii Bab.
+
+new species described in Bab."""^^xsd:string .
 
 
 

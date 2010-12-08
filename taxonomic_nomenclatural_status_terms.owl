@@ -1,0 +1,830 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl> .
+
+<http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+<http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty .
+rdfs:comment rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#appliesInGoverningCode
+
+:appliesInGoverningCode rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:range :NomenclaturalCode ;
+                        
+                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#resultsInNomenclaturalStatus
+
+:resultsInNomenclaturalStatus rdf:type owl:ObjectProperty ;
+                              
+                              rdfs:range :NomenclaturalActStatus ;
+                              
+                              rdfs:domain :NomenclaturalEventType ;
+                              
+                              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+
+skos:related rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Absolute_Synonym
+
+:Absolute_Synonym rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Acceptable_Under_Governing_Code
+
+:Acceptable_Under_Governing_Code rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf :NomenclaturalActStatus ;
+                                 
+                                 owl:disjointWith :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Accepted_Name
+
+:Accepted_Name rdf:type owl:Class ;
+               
+               rdfs:subClassOf :TaxonomicEventStatus .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Alternative_name
+
+:Alternative_name rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Ambiguuous_Name
+
+:Ambiguuous_Name rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Approved_Name_IDNP
+
+:Approved_Name_IDNP rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Autonym_Avoidance
+
+:Autonym_Avoidance rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Available_ICZN
+
+:Available_ICZN rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Change_of_Type
+
+:Change_of_Type rdf:type owl:Class ;
+                
+                rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Change_of_combination
+
+:Change_of_combination rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Changed_Combination_ICZN
+
+:Changed_Combination_ICZN rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :Change_of_combination .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Conservation
+
+:Conservation rdf:type owl:Class ;
+              
+              rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Conserved_Name
+
+:Conserved_Name rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Corrected_Name
+
+:Corrected_Name rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Dubious_Name
+
+:Dubious_Name rdf:type owl:Class ;
+              
+              rdfs:subClassOf :NomenclaturalActStatus .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Earlier_Heterotypic_Synonym
+
+:Earlier_Heterotypic_Synonym rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :Accepted_Name ;
+                             
+                             rdfs:comment """\"a name based on a different type from that of the accepted name of taxon; a subjective synonym in zool. and prok.; see also taxonomic synonym; syntaxonomic synonym.\"
+Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Earlier_Homotypic_Synonym
+
+:Earlier_Homotypic_Synonym rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :Valid_ICBN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor,_Choosing_Spelling
+
+:First_Revisor,_Choosing_Spelling rdf:type owl:Class ;
+                                  
+                                  rdfs:subClassOf :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor,_Chosing_Priority
+
+:First_Revisor,_Chosing_Priority rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Forgotten_Name
+
+:Forgotten_Name rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ICBN
+
+:ICBN rdf:type owl:Class ;
+      
+      rdfs:subClassOf :NomenclaturalCode ;
+      
+      <http://purl.org/dc/elements/1.1/title> "International Code of Botanical Nomenclature"^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ICNP
+
+:ICNP rdf:type owl:Class ;
+      
+      rdfs:subClassOf :NomenclaturalCode ;
+      
+      <http://purl.org/dc/elements/1.1/title> "International Code of Nomenclature of Prokariotes.  Formerly International Code of Nomenclature of Bacteria. "^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ICZN
+
+:ICZN rdf:type owl:Class ;
+      
+      rdfs:subClassOf :NomenclaturalCode ;
+      
+      <http://purl.org/dc/elements/1.1/title> "International Code of Zoological Nomenclature"^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Illigetimate_Name
+
+:Illigetimate_Name rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Incorrect_Subsequent_Spelling
+
+:Incorrect_Subsequent_Spelling rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Independent_Name
+
+:Independent_Name rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Acceptable_Under_Governing_Code ;
+                  
+                  rdfs:comment "Independent Names.  ICNP.  Names that are not homonyms because they are subject to different codes."^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Invalid_Name_ICBN
+
+:Invalid_Name_ICBN rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Invalid_Name_ICZN
+
+:Invalid_Name_ICZN rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Junior_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Objective_Synonym
+
+:Junior_Objective_Synonym rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :Absolute_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Primary_Homonym
+
+:Junior_Primary_Homonym rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Secondary_Homonym
+
+:Junior_Secondary_Homonym rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Subjective_Synonym
+
+:Junior_Subjective_Synonym rdf:type owl:Class ;
+                           
+                           owl:equivalentClass :Junior_Synonym ;
+                           
+                           rdfs:subClassOf :Junior_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Subjective_Synonym_in_part
+
+:Junior_Subjective_Synonym_in_part rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf :Junior_Subjective_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Synonym
+
+:Junior_Synonym rdf:type owl:Class ;
+                
+                rdfs:subClassOf :TaxonomicEventStatus .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Justified_Emendation
+
+:Justified_Emendation rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Later_Heterotypic_Synonym
+
+:Later_Heterotypic_Synonym rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :Junior_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Later_Homotypic_Synonym
+
+:Later_Homotypic_Synonym rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :Absolute_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Lectotypification
+
+:Lectotypification rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Change_of_Type .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Name_Rejected_Outright
+
+:Name_Rejected_Outright rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :Rejected_Name ;
+                        
+                        rdfs:comment "Name rejected without a corresponding conserved name."^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Name_in_opus_utique_oppr.
+
+:Name_in_opus_utique_oppr. rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Neotypification
+
+:Neotypification rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Change_of_Type .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#New_Combination
+
+:New_Combination rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :NomenclaturalActStatus .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#New_scientific_name
+
+:New_scientific_name rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Imaginatum
+
+:Nomen_Imaginatum rdf:type owl:Class ;
+                  
+                  rdfs:comment "Imagniary name used to illustrate a nomenclatural point."^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Nudem
+
+:Nomen_Nudem rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Illigetimate_Name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Oblitum
+
+:Nomen_Oblitum rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#NomenclaturalActStatus
+
+:NomenclaturalActStatus rdf:type owl:Class .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#NomenclaturalCode
+
+:NomenclaturalCode rdf:type owl:Class .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#NomenclaturalEventType
+
+:NomenclaturalEventType rdf:type owl:Class .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Not_Acceptable_Under_Governing_Code
+
+:Not_Acceptable_Under_Governing_Code rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf :NomenclaturalActStatus .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Orthographic_Variant
+
+:Orthographic_Variant rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :NomenclaturalActStatus .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Protected_Name
+
+:Protected_Name rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Reinstated_Name
+
+:Reinstated_Name rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Reinstatement_of_name
+
+:Reinstatement_of_name rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected,_nom._confusum.
+
+:Rejected,_nom._confusum. rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :Rejection .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected_Name
+
+:Rejected_Name rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejection
+
+:Rejection rdf:type owl:Class ;
+           
+           rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Replacement_of_a_name
+
+:Replacement_of_a_name rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Sanctioned_Name
+
+:Sanctioned_Name rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Sanctioning_Usage
+
+:Sanctioning_Usage rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :NomenclaturalEventType ;
+                   
+                   rdfs:comment """See: http://www.cybertruffle.org.uk/cyberliber/59575/0016/002/0345.htm
+
+Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principles in \": Pers.\" and \": Fr.\" citations\". Mycotaxon 16 (2): 341–52."""^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Objective_Synonym
+
+:Senior_Objective_Synonym rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :Available_ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Primary_Homonym
+
+:Senior_Primary_Homonym rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :Available_ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Secondary_Homonym
+
+:Senior_Secondary_Homonym rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :Available_ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Subjective_Synonym
+
+:Senior_Subjective_Synonym rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :Accepted_Name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Substitute_Name
+
+:Substitute_Name rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Superfluous_name
+
+:Superfluous_name rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Tautonym_Avoidance
+
+:Tautonym_Avoidance rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#TaxonomicEventStatus
+
+:TaxonomicEventStatus rdf:type owl:Class .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Unjustified_Emendation
+
+:Unjustified_Emendation rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Valid_ICBN
+
+:Valid_ICBN rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Valid_ICZN
+
+:Valid_ICZN rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Accepted_Name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Validation
+
+:Validation rdf:type owl:Class ;
+            
+            rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Validation_of_name_introduced_in_synonomy
+
+:Validation_of_name_introduced_in_synonomy rdf:type owl:Class ;
+                                           
+                                           rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#declaration_of_nomen_oblitum
+
+:declaration_of_nomen_oblitum rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#declaration_of_nomen_protectum
+
+:declaration_of_nomen_protectum rdf:type owl:Class ;
+                                
+                                rdfs:subClassOf :NomenclaturalEventType .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#missapplied_name
+
+:missapplied_name rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :TaxonomicEventStatus ;
+                  
+                  rdfs:comment """\"a name applied to a taxon in a sense that excludes the type of the name, i.e. a name incorrectly applied.\"
+Hawksworth, Terms Used In Bionomenclature"""^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#missidentification
+
+:missidentification rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :TaxonomicEventStatus ;
+                    
+                    rdfs:comment """\"the assignment of a specimen, population or taxon to a taxon to which it is generally (or later) considered it does not belong.\"
+Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#nom_nov_ICBN
+
+:nom_nov_ICBN rdf:type owl:Class ;
+              
+              rdfs:subClassOf :New_scientific_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#nom_nov_ICZN
+
+:nom_nov_ICZN rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#sp._nov.
+
+:sp._nov. rdf:type owl:Class ;
+          
+          rdfs:subClassOf :New_scientific_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ssp._nov.
+
+:ssp._nov. rdf:type owl:Class ;
+           
+           rdfs:subClassOf :New_scientific_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#stat._nov.
+
+:stat._nov. rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Change_of_combination .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#var._nov.
+
+:var._nov. rdf:type owl:Class ;
+           
+           rdfs:subClassOf :New_scientific_name .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ICBN
+
+:ICBN rdf:type owl:NamedIndividual ;
+      
+      <http://purl.org/dc/elements/1.1/title> "International Code of Botanical Nomenclature"^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ICZN
+
+:ICZN rdf:type owl:NamedIndividual ;
+      
+      <http://purl.org/dc/elements/1.1/title> "International Code of Zoological Nomenclature"^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#heterotypic_synonym
+
+:heterotypic_synonym rdf:type owl:NamedIndividual ;
+                     
+                     :appliesInGoverningCode :ICBN ;
+                     
+                     skos:related :subjective_synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#homotypic_synonym
+
+:homotypic_synonym rdf:type owl:NamedIndividual ;
+                   
+                   :appliesInGoverningCode :ICBN ;
+                   
+                   skos:related :objective_synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#objective_synonym
+
+:objective_synonym rdf:type owl:NamedIndividual ;
+                   
+                   :appliesInGoverningCode :ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#subjective_synonym
+
+:subjective_synonym rdf:type owl:NamedIndividual ;
+                    
+                    :appliesInGoverningCode :ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#synonym
+
+:synonym rdf:type owl:NamedIndividual ;
+         
+         :appliesInGoverningCode :ICBN ,
+                                 :ICZN .
+
+
+
+
+###  Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net
+

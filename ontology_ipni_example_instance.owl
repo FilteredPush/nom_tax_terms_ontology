@@ -44,16 +44,16 @@ DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#taxonomicNa
 DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#yearPublished>
 
     
-DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#version>
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authorName>
 
     
-DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#authorName>
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#version>
 
     
 DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#typeLocality>
 
     
-DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#collectionCode>
+DataProperty: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#standardHerbariumAcronym>
 
     
 Class: <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#Author>
@@ -124,7 +124,7 @@ Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Rubus
         <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#TypeSpecimen>
     
     Facts:  
-        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#collectionCode>  "BH"@
+        <http://www.huh.harvard.edu/Ontology_IPNI_thoughts.owl#standardHerbariumAcronym>  "BH"@
     
     
 Individual: <http://www.huh.harvard.edu/ontology_ipni_example_instance.owl#Rubus_laudatus_A.Berger_sensu_DavisFullerAndDavis>

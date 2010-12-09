@@ -7,7 +7,17 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl> .
 
-<http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl> rdf:type owl:Ontology .
+<http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl> rdf:type owl:Ontology ;
+                                                                                 
+                                                                                 owl:versionInfo 0.1 ;
+                                                                                 
+                                                                                 rdfs:comment "An ontological treatment of terms for Taxonomic Events, Nomenclatural Events, and resulting Nomenclatural Statuses.  "^^xsd:string ;
+                                                                                 
+                                                                                 <http://purl.org/dc/elements/1.1/subject> "Biological Nomenclature"^^xsd:string ;
+                                                                                 
+                                                                                 owl:versionInfo "Draft."^^xsd:string ;
+                                                                                 
+                                                                                 <http://purl.org/dc/elements/1.1/creator> "Paul J. Morris"^^xsd:string .
 
 
 #################################################################
@@ -17,7 +27,10 @@
 #################################################################
 
 
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+owl:versionInfo rdf:type owl:AnnotationProperty .
 <http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/elements/1.1/subject> rdf:type owl:AnnotationProperty .
 rdfs:comment rdf:type owl:AnnotationProperty .
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
 

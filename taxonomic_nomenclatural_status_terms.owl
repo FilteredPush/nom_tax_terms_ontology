@@ -86,7 +86,9 @@ skos:related rdf:type owl:ObjectProperty .
                                  
                                  rdfs:subClassOf :NomenclaturalActStatus ;
                                  
-                                 owl:disjointWith :Not_Acceptable_Under_Governing_Code .
+                                 owl:disjointWith :Not_Acceptable_Under_Governing_Code ;
+                                 
+                                 rdfs:comment "Statuses of nomenclatural act that are acceptable statuses under the governing code."^^xsd:string .
 
 
 
@@ -114,9 +116,9 @@ skos:related rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Approved_Name_IDNP
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Approved_Name_ICNP
 
-:Approved_Name_IDNP rdf:type owl:Class ;
+:Approved_Name_ICNP rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Acceptable_Under_Governing_Code .
 
@@ -134,7 +136,9 @@ skos:related rdf:type owl:ObjectProperty .
 
 :Available_ICZN rdf:type owl:Class ;
                 
-                rdfs:subClassOf :Acceptable_Under_Governing_Code .
+                rdfs:subClassOf :Acceptable_Under_Governing_Code ;
+                
+                rdfs:comment "Nomenclatural act statuses that are available names under the International Code of Zoological Nomenclature."^^xsd:string .
 
 
 
@@ -216,16 +220,16 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor_Choosing_Spelling
 
 :First_Revisor_Choosing_Spelling rdf:type owl:Class ;
-                                  
-                                  rdfs:subClassOf :Replacement_of_a_name .
+                                 
+                                 rdfs:subClassOf :Replacement_of_a_name .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor_Chosing_Priority
 
 :First_Revisor_Chosing_Priority rdf:type owl:Class ;
-                                 
-                                 rdfs:subClassOf :NomenclaturalEventType .
+                                
+                                rdfs:subClassOf :NomenclaturalEventType .
 
 
 
@@ -337,9 +341,8 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 
 :Junior_Subjective_Synonym rdf:type owl:Class ;
                            
-                           owl:equivalentClass :Junior_Synonym ;
-                           
-                           rdfs:subClassOf :Junior_Synonym .
+                           rdfs:subClassOf :Junior_Synonym ,
+                                           :TaxonomicEventStatus .
 
 
 
@@ -404,8 +407,8 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Name_in_opus_utique_oppr
 
 :Name_in_opus_utique_oppr rdf:type owl:Class ;
-                           
-                           rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+                          
+                          rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
 
 
 
@@ -437,7 +440,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 
 :Nomen_Imaginatum rdf:type owl:Class ;
                   
-                  rdfs:comment "Imagniary name used to illustrate a nomenclatural point."^^xsd:string .
+                  rdfs:comment "Imagniary name used to illustrate a nomenclatural point."^^xsd:string ;
+                  
+                  <http://purl.org/dc/elements/1.1/title> "nomen imagniatum"^^xsd:string .
 
 
 
@@ -459,7 +464,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#NomenclaturalActStatus
 
-:NomenclaturalActStatus rdf:type owl:Class .
+:NomenclaturalActStatus rdf:type owl:Class ;
+                        
+                        rdfs:comment "Status of nemenclatural acts."^^xsd:string .
 
 
 
@@ -515,19 +522,19 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected_nom_confusum
-
-:Rejected_nom_confusum rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :Rejection .
-
-
-
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected_Name
 
 :Rejected_Name rdf:type owl:Class ;
                
                rdfs:subClassOf :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected_nom_confusum
+
+:Rejected_nom_confusum rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :Rejection .
 
 
 
@@ -571,7 +578,11 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 
 :Senior_Objective_Synonym rdf:type owl:Class ;
                           
-                          rdfs:subClassOf :Available_ICZN .
+                          rdfs:subClassOf :Available_ICZN ;
+                          
+                          rdfs:comment """The status of being a senior objective synonym under the ICZN.
+
+The earlier of a pair of nominal taxa that have the same name bearing type.  """^^xsd:string .
 
 
 
@@ -710,48 +721,48 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#no_novICBN
 
 :no_novICBN rdf:type owl:Class ;
-              
-              rdfs:subClassOf :New_scientific_name .
+            
+            rdfs:subClassOf :New_scientific_name .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#no_novICZN
 
 :no_novICZN rdf:type owl:Class ;
-              
-              rdfs:subClassOf :Replacement_of_a_name .
+            
+            rdfs:subClassOf :Replacement_of_a_name .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#sp_nov
 
 :sp_nov rdf:type owl:Class ;
-          
-          rdfs:subClassOf :New_scientific_name .
+        
+        rdfs:subClassOf :New_scientific_name .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ssp_nov
 
 :ssp_nov rdf:type owl:Class ;
-           
-           rdfs:subClassOf :New_scientific_name .
+         
+         rdfs:subClassOf :New_scientific_name .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#stat_nov
 
 :stat_nov rdf:type owl:Class ;
-            
-            rdfs:subClassOf :Change_of_combination .
+          
+          rdfs:subClassOf :Change_of_combination .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#var_nov
 
 :var_nov rdf:type owl:Class ;
-           
-           rdfs:subClassOf :New_scientific_name .
+         
+         rdfs:subClassOf :New_scientific_name .
 
 
 
@@ -764,11 +775,103 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
 #################################################################
 
 
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Approved_Name_ICNP
+
+:Approved_Name_ICNP rdf:type owl:NamedIndividual ;
+                    
+                    :appliesInGoverningCode :ICNP .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Available_ICZN
+
+:Available_ICZN rdf:type owl:NamedIndividual ;
+                
+                rdfs:comment "Nomenclatural act statuses that are available names under the International Code of Zoological Nomenclature."^^xsd:string ;
+                
+                :appliesInGoverningCode :ICBN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Changed_Combination_ICZN
+
+:Changed_Combination_ICZN rdf:type owl:NamedIndividual ;
+                          
+                          :appliesInGoverningCode :ICBN ;
+                          
+                          skos:related :stat_nov .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Conservation
+
+:Conservation rdf:type owl:NamedIndividual ;
+              
+              :resultsInNomenclaturalStatus :Conserved_Name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Conserved_Name
+
+:Conserved_Name rdf:type owl:NamedIndividual ;
+                
+                :appliesInGoverningCode :ICBN ,
+                                        :ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Earlier_Heterotypic_Synonym
+
+:Earlier_Heterotypic_Synonym rdf:type owl:NamedIndividual ;
+                             
+                             rdfs:comment """\"a name based on a different type from that of the accepted name of taxon; a subjective synonym in zool. and prok.; see also taxonomic synonym; syntaxonomic synonym.\"
+Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
+                             
+                             :appliesInGoverningCode :ICBN ;
+                             
+                             skos:related :Senior_Subjective_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Earlier_Homotypic_Synonym
+
+:Earlier_Homotypic_Synonym rdf:type owl:NamedIndividual ;
+                           
+                           :appliesInGoverningCode :ICBN ;
+                           
+                           skos:related :Senior_Objective_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor_Choosing_Spelling
+
+:First_Revisor_Choosing_Spelling rdf:type owl:NamedIndividual ;
+                                 
+                                 :appliesInGoverningCode :ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#First_Revisor_Chosing_Priority
+
+:First_Revisor_Chosing_Priority rdf:type owl:NamedIndividual ;
+                                
+                                :appliesInGoverningCode :ICZN .
+
+
+
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ICBN
 
 :ICBN rdf:type owl:NamedIndividual ;
       
       <http://purl.org/dc/elements/1.1/title> "International Code of Botanical Nomenclature"^^xsd:string .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ICNP
+
+:ICNP rdf:type owl:NamedIndividual ;
+      
+      <http://purl.org/dc/elements/1.1/title> "International Code of Nomenclature of Prokariotes.  Formerly International Code of Nomenclature of Bacteria. "^^xsd:string .
 
 
 
@@ -780,48 +883,63 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#heterotypic_synonym
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Objective_Synonym
 
-:heterotypic_synonym rdf:type owl:NamedIndividual ;
-                     
-                     :appliesInGoverningCode :ICBN ;
-                     
-                     skos:related :subjective_synonym .
+:Junior_Objective_Synonym rdf:type owl:NamedIndividual ;
+                          
+                          skos:related :Later_Homotypic_Synonym .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#homotypic_synonym
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Subjective_Synonym
 
-:homotypic_synonym rdf:type owl:NamedIndividual ;
-                   
-                   :appliesInGoverningCode :ICBN ;
-                   
-                   skos:related :objective_synonym .
+:Junior_Subjective_Synonym rdf:type owl:NamedIndividual ;
+                           
+                           skos:related :Later_Heterotypic_Synonym .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#objective_synonym
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Later_Heterotypic_Synonym
 
-:objective_synonym rdf:type owl:NamedIndividual ;
-                   
-                   :appliesInGoverningCode :ICZN .
-
-
-
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#subjective_synonym
-
-:subjective_synonym rdf:type owl:NamedIndividual ;
-                    
-                    :appliesInGoverningCode :ICZN .
+:Later_Heterotypic_Synonym rdf:type owl:NamedIndividual ;
+                           
+                           skos:related :Junior_Subjective_Synonym .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#synonym
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Later_Homotypic_Synonym
 
-:synonym rdf:type owl:NamedIndividual ;
-         
-         :appliesInGoverningCode :ICBN ,
-                                 :ICZN .
+:Later_Homotypic_Synonym rdf:type owl:NamedIndividual ;
+                         
+                         skos:related :Junior_Objective_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Objective_Synonym
+
+:Senior_Objective_Synonym rdf:type owl:NamedIndividual ;
+                          
+                          rdfs:comment """The status of being a senior objective synonym under the ICZN.
+
+The earlier of a pair of nominal taxa that have the same name bearing type.  """^^xsd:string ;
+                          
+                          skos:related :Earlier_Homotypic_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Subjective_Synonym
+
+:Senior_Subjective_Synonym rdf:type owl:NamedIndividual ;
+                           
+                           skos:related :Earlier_Heterotypic_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#stat_nov
+
+:stat_nov rdf:type owl:NamedIndividual ;
+          
+          :appliesInGoverningCode :ICBN .
 
 
 

@@ -197,7 +197,9 @@ skos:related rdf:type owl:ObjectProperty .
                 
                 rdfs:subClassOf :Acceptable_Under_Governing_Code ;
                 
-                rdfs:comment "A name that should not be acceptable under the governing code, but which has been conserved by an action of the relevant code governed body."^^xsd:string .
+                rdfs:comment "A name that should not be acceptable under the governing code, but which has been conserved by an action of the relevant code governed body."^^xsd:string ;
+                
+                :example "Hemerobius elegans Guérin-Méneville, 1844"^^xsd:string .
 
 
 
@@ -223,7 +225,9 @@ skos:related rdf:type owl:ObjectProperty .
 
 :Earlier_Nomenclatural_Synonym rdf:type owl:Class ;
                                
-                               rdfs:subClassOf :Valid_ICBN .
+                               rdfs:subClassOf :Valid_ICBN ;
+                               
+                               rdfs:seeAlso :Later_Nomenclatural_Synonym .
 
 
 
@@ -236,7 +240,7 @@ skos:related rdf:type owl:ObjectProperty .
                            rdfs:comment """\"a name based on a different type from that of the accepted name of taxon; a subjective synonym in zool. and prok.; see also taxonomic synonym; syntaxonomic synonym.\"
 Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                            
-                           rdfs:seeAlso :Later_Heterotypic_Synonym .
+                           rdfs:seeAlso :Later_Taxonomic_Synonym .
 
 
 
@@ -350,7 +354,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :Junior_Objective_Synonym rdf:type owl:Class ;
                           
-                          rdfs:subClassOf :Absolute_Synonym .
+                          rdfs:subClassOf :Absolute_Synonym ;
+                          
+                          rdfs:seeAlso :Senior_Objective_Synonym .
 
 
 
@@ -407,7 +413,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :Later_Nomenclatural_Synonym rdf:type owl:Class ;
                              
-                             rdfs:subClassOf :Absolute_Synonym .
+                             rdfs:subClassOf :Absolute_Synonym ;
+                             
+                             rdfs:seeAlso :Earlier_Nomenclatural_Synonym .
 
 
 
@@ -497,7 +505,11 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :Nomen_Nudem rdf:type owl:Class ;
              
-             rdfs:subClassOf :Illigetimate_Name .
+             rdfs:subClassOf :Illigetimate_Name ;
+             
+             rdfs:comment "ICZN Glossary: \"a name that, if published before 1931, fails to conform to Article 12; or, if published after 1930, fails to conform to Article 13. A nomen nudum is not an available name, and therefore the same name may be made available later for the same or a different concept; in such a case it would take authorship and date [Arts. 50, 21] from that act of establishment, not from any earlier publication as a nomen nudum.\""^^xsd:string ;
+             
+             <http://purl.org/dc/elements/1.1/title> "nomen nudem"^^xsd:string .
 
 
 
@@ -507,7 +519,10 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                
                rdfs:subClassOf :Not_Acceptable_Under_Governing_Code ;
                
-               rdfs:comment "ICZN.  A name who's priority has been quashed."^^xsd:string .
+               rdfs:comment "ICZN Glossary: applied after 1 January 2000 to a name, unused since 1899, which as a result of an action taken under Article 23.9.2 does not take precedence over a younger synonym or homonym in prevailing usage; the younger name which takes precedence over the nomen oblitum may be called a nomen protectum (q.v.). The term nomen oblitum was also applied to a disused senior synonym rejected between 6 November 1961 and 1 January 1973 under Article 23b of the Code editions then in force (see Article 23.12.2). Nomina oblita remain available names; see Articles 23.9 and 23.12 for conditions controlling their use as valid names."^^xsd:string ,
+                            "ICZN.  A name who's priority has been quashed."^^xsd:string ;
+               
+               <http://purl.org/dc/elements/1.1/title> "nomen oblitum"^^xsd:string .
 
 
 
@@ -515,7 +530,8 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :NomenclaturalActStatus rdf:type owl:Class ;
                         
-                        rdfs:comment "Terms describing the status of nomenclatural acts/events (loosely, terms describing the nomenclatural, but not taxonomic, status of names in biological nomenclature)."^^xsd:string .
+                        rdfs:comment "ICZN Glossary: Nomenclatural Status: \"Of a name, nomenclatural act or work: its standing in nomenclature (i.e. its availability or otherwise, and in the case of a name its spelling, the typification of the nominal taxon it denotes, and its precedence relative to other names).\""^^xsd:string ,
+                                     "Terms describing the status of nomenclatural acts/events (loosely, terms describing the nomenclatural, but not taxonomic, status of names in biological nomenclature)."^^xsd:string .
 
 
 
@@ -531,7 +547,8 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :NomenclaturalEventType rdf:type owl:Class ;
                         
-                        rdfs:comment "Terms for types of events in biological nomenclature."^^xsd:string .
+                        rdfs:comment "ICZN Glossary:  \"A published act which affects the nomenclatural status (q.v.) of a scientific name or the typification of a nominal taxon.\""^^xsd:string ,
+                                     "Terms for types of events in biological nomenclature."^^xsd:string .
 
 
 
@@ -573,7 +590,11 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :Protected_Name rdf:type owl:Class ;
                 
-                rdfs:subClassOf :Acceptable_Under_Governing_Code .
+                rdfs:subClassOf :Acceptable_Under_Governing_Code ;
+                
+                rdfs:comment "ICZN Glossary: \"applied to a name which has been given precedence over its unused senior synonym or senior homonym relegated to the status of nomen oblitum (q.v., and see Article 23.9.2)\""^^xsd:string ;
+                
+                <http://purl.org/dc/elements/1.1/title> "nomen protectum"^^xsd:string .
 
 
 
@@ -721,7 +742,9 @@ The earlier of a pair of nominal taxa that have the same name bearing type.  """
 
 :Substitute_Name rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Replacement_of_a_name .
+                 rdfs:subClassOf :Replacement_of_a_name ;
+                 
+                 rdfs:comment "Avowed substitute"^^xsd:string .
 
 
 
@@ -981,28 +1004,37 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
                 
                 rdfs:comment "A name that should not be acceptable under the governing code, but which has been conserved by an action of the relevant code governed body."^^xsd:string ;
                 
+                :example "Hemerobius elegans Guérin-Méneville, 1844"^^xsd:string ;
+                
                 :appliesInGoverningCode :ICBN ,
                                         :ICZN .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Earlier_Heterotypic_Synonym
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Earlier_Nomenclatural_Synonym
 
-:Earlier_Heterotypic_Synonym rdf:type owl:NamedIndividual ;
-                             
-                             :appliesInGoverningCode :ICBN ;
-                             
-                             skos:related :Senior_Subjective_Synonym .
+:Earlier_Nomenclatural_Synonym rdf:type owl:NamedIndividual ;
+                               
+                               :appliesInGoverningCode :ICBN ;
+                               
+                               rdfs:seeAlso :Later_Nomenclatural_Synonym ;
+                               
+                               skos:related :Senior_Objective_Synonym .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Earlier_Homotypic_Synonym
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Earlier_Taxonomic_Synonym
 
-:Earlier_Homotypic_Synonym rdf:type owl:NamedIndividual ;
+:Earlier_Taxonomic_Synonym rdf:type owl:NamedIndividual ;
+                           
+                           rdfs:comment """\"a name based on a different type from that of the accepted name of taxon; a subjective synonym in zool. and prok.; see also taxonomic synonym; syntaxonomic synonym.\"
+Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                            
                            :appliesInGoverningCode :ICBN ;
                            
-                           skos:related :Senior_Objective_Synonym .
+                           rdfs:seeAlso :Later_Taxonomic_Synonym ;
+                           
+                           skos:related :Senior_Subjective_Synonym .
 
 
 
@@ -1064,7 +1096,9 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
                           :appliesInGoverningCode :ICNP ,
                                                   :ICZN ;
                           
-                          skos:related :Later_Homotypic_Synonym .
+                          skos:related :Later_Nomenclatural_Synonym ;
+                          
+                          rdfs:seeAlso :Senior_Objective_Synonym .
 
 
 
@@ -1091,23 +1125,7 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
                            :appliesInGoverningCode :ICNP ,
                                                    :ICZN ;
                            
-                           skos:related :Later_Heterotypic_Synonym .
-
-
-
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Later_Heterotypic_Synonym
-
-:Later_Heterotypic_Synonym rdf:type owl:NamedIndividual ;
-                           
-                           skos:related :Junior_Subjective_Synonym .
-
-
-
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Later_Homotypic_Synonym
-
-:Later_Homotypic_Synonym rdf:type owl:NamedIndividual ;
-                         
-                         skos:related :Junior_Objective_Synonym .
+                           skos:related :Later_Taxonomic_Synonym .
 
 
 
@@ -1115,7 +1133,11 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
 
 :Later_Nomenclatural_Synonym rdf:type owl:NamedIndividual ;
                              
-                             :appliesInGoverningCode :ICBN .
+                             rdfs:seeAlso :Earlier_Nomenclatural_Synonym ;
+                             
+                             :appliesInGoverningCode :ICBN ;
+                             
+                             skos:related :Junior_Objective_Synonym .
 
 
 
@@ -1123,7 +1145,9 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string .
 
 :Later_Taxonomic_Synonym rdf:type owl:NamedIndividual ;
                          
-                         :appliesInGoverningCode :ICBN .
+                         :appliesInGoverningCode :ICBN ;
+                         
+                         skos:related :Junior_Subjective_Synonym .
 
 
 
@@ -1173,7 +1197,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 
 The earlier of a pair of nominal taxa that have the same name bearing type.  """^^xsd:string ;
                           
-                          skos:related :Earlier_Homotypic_Synonym ;
+                          skos:related :Earlier_Nomenclatural_Synonym ;
                           
                           :appliesInGoverningCode :ICNP ,
                                                   :ICZN ;
@@ -1206,7 +1230,7 @@ The earlier of a pair of nominal taxa that have the same name bearing type.  """
 
 :Senior_Subjective_Synonym rdf:type owl:NamedIndividual ;
                            
-                           skos:related :Earlier_Heterotypic_Synonym ;
+                           skos:related :Earlier_Taxonomic_Synonym ;
                            
                            :appliesInGoverningCode :ICNP ,
                                                    :ICZN ;

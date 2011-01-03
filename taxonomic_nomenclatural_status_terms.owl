@@ -793,7 +793,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                            rdfs:subClassOf :Junior_Synonym ,
                                            :TaxonomicEventStatus ;
                            
-                           <http://purl.org/dc/elements/1.1/type> "Term"@"Term" .
+                           <http://purl.org/dc/elements/1.1/type> "Term"  .
 
 
 
@@ -803,7 +803,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                                    
                                    rdfs:subClassOf :Junior_Subjective_Synonym ;
                                    
-                                   <http://purl.org/dc/elements/1.1/type> "Term"@"Term" .
+                                   <http://purl.org/dc/elements/1.1/type> "Term"  .
 
 
 
@@ -1816,7 +1816,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :Junior_Subjective_Synonym rdf:type owl:NamedIndividual ;
                            
-                           <http://purl.org/dc/elements/1.1/type> "Term"@"Term" ;
+                           <http://purl.org/dc/elements/1.1/type> "Term"  ;
                            
                            :appliesInGoverningCode :ICNP ,
                                                    :ICZN ;

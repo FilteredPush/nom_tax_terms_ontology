@@ -9,7 +9,7 @@
 
 <http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl> rdf:type owl:Ontology ;
                                                                                  
-                                                                                 owl:versionInfo 0.3 ;
+                                                                                 owl:versionInfo 0.4 ;
                                                                                  
                                                                                  <http://purl.org/dc/elements/1.1/description> "An ontological treatment of terms for Nomenclatural Acts/Events, Nomenclatural Events, and terms for the Nomenclatural Status and Taxonomic Status that can result from such events.  "^^xsd:string ;
                                                                                  
@@ -39,15 +39,45 @@ http://www.ncbi.nlm.nih.gov/books/NBK8817/"""^^xsd:string ;
 
 
 <http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+
 owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+
 rdfs:seeAlso rdf:type owl:AnnotationProperty .
+
+
+
 <http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty .
+
+
+
 <http://purl.org/dc/elements/1.1/subject> rdf:type owl:AnnotationProperty .
+
+
+
 :example rdf:type owl:AnnotationProperty .
+
+
+
 rdfs:label rdf:type owl:AnnotationProperty .
+
+
+
 <http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+
 rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+
 
 
 #################################################################
@@ -67,43 +97,46 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#conservedInFavorOf
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#conservedOver
 
-:conservedInFavorOf rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:subPropertyOf :hasPriority ;
-                    
-                    owl:inverseOf :rejectedInFavorOf .
+:conservedOver rdf:type owl:IrreflexiveProperty ,
+                        owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf :hasPriorityOver ;
+               
+               owl:inverseOf :rejectedInFavorOf .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#hasPriority
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#hasPriorityOver
 
-:hasPriority rdf:type owl:ObjectProperty ;
-             
-             rdfs:comment "One name of the pair should be used because it has nomenclatural priority over the other."^^xsd:string ;
-             
-             rdfs:subPropertyOf owl:topObjectProperty .
+:hasPriorityOver rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:comment "One name of the pair should be used because it has nomenclatural priority over the other."^^xsd:string ;
+                 
+                 rdfs:subPropertyOf :relatedPairsOfNames .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isEarlierHomonymOf
 
-:isEarlierHomonymOf rdf:type owl:ObjectProperty ;
+:isEarlierHomonymOf rdf:type owl:IrreflexiveProperty ,
+                             owl:ObjectProperty ;
                     
                     rdfs:domain :Earlier_Homonym ;
                     
                     rdfs:range :Later_Homonym ;
                     
-                    rdfs:subPropertyOf :hasPriority .
+                    rdfs:subPropertyOf :hasPriorityOver .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isEarlierNomenclaturalSynonymOf
 
-:isEarlierNomenclaturalSynonymOf rdf:type owl:ObjectProperty ;
+:isEarlierNomenclaturalSynonymOf rdf:type owl:IrreflexiveProperty ,
+                                          owl:ObjectProperty ;
                                  
-                                 rdfs:subPropertyOf :hasPriority ;
+                                 rdfs:subPropertyOf :hasPriorityOver ;
                                  
                                  owl:inverseOf :isLaterNomenclaturalSynonymOf .
 
@@ -111,7 +144,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isEarlierTaxonomicSynonymOf
 
-:isEarlierTaxonomicSynonymOf rdf:type owl:ObjectProperty ;
+:isEarlierTaxonomicSynonymOf rdf:type owl:IrreflexiveProperty ,
+                                      owl:ObjectProperty ;
                              
                              owl:inverseOf :isLaterTaxonomicSynonymOf ;
                              
@@ -127,25 +161,27 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:range :Senior_Homonym ;
                    
-                   rdfs:subPropertyOf :lacksPriority .
+                   rdfs:subPropertyOf :lacksPriorityInFavorOf .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isJuniorObjectiveSynonymOf
 
-:isJuniorObjectiveSynonymOf rdf:type owl:ObjectProperty ;
+:isJuniorObjectiveSynonymOf rdf:type owl:IrreflexiveProperty ,
+                                     owl:ObjectProperty ;
                             
                             rdfs:domain :Junior_Objective_Synonym ;
                             
                             rdfs:range :Senior_Objective_Synonym ;
                             
-                            rdfs:subPropertyOf :lacksPriority .
+                            rdfs:subPropertyOf :lacksPriorityInFavorOf .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isJuniorPrimaryHomonymOf
 
-:isJuniorPrimaryHomonymOf rdf:type owl:ObjectProperty ;
+:isJuniorPrimaryHomonymOf rdf:type owl:IrreflexiveProperty ,
+                                   owl:ObjectProperty ;
                           
                           rdfs:domain :Junior_Primary_Homonym ;
                           
@@ -157,7 +193,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isJuniorSecondaryHomonymOf
 
-:isJuniorSecondaryHomonymOf rdf:type owl:ObjectProperty ;
+:isJuniorSecondaryHomonymOf rdf:type owl:IrreflexiveProperty ,
+                                     owl:ObjectProperty ;
                             
                             rdfs:domain :Junior_Secondary_Homonym ;
                             
@@ -169,7 +206,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isJuniorSubjectiveSynonymOf
 
-:isJuniorSubjectiveSynonymOf rdf:type owl:ObjectProperty ;
+:isJuniorSubjectiveSynonymOf rdf:type owl:IrreflexiveProperty ,
+                                      owl:ObjectProperty ;
                              
                              rdfs:domain :Junior_Subjective_Synonym ;
                              
@@ -181,7 +219,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isLaterHomonymOf
 
-:isLaterHomonymOf rdf:type owl:ObjectProperty ;
+:isLaterHomonymOf rdf:type owl:IrreflexiveProperty ,
+                           owl:ObjectProperty ;
                   
                   rdfs:range :Earlier_Homonym ;
                   
@@ -189,25 +228,27 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   owl:inverseOf :isEarlierHomonymOf ;
                   
-                  rdfs:subPropertyOf :lacksPriority .
+                  rdfs:subPropertyOf :lacksPriorityInFavorOf .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isLaterNomenclaturalSynonymOf
 
-:isLaterNomenclaturalSynonymOf rdf:type owl:ObjectProperty ;
+:isLaterNomenclaturalSynonymOf rdf:type owl:IrreflexiveProperty ,
+                                        owl:ObjectProperty ;
                                
                                rdfs:domain :Earlier_Nomenclatural_Synonym ;
                                
                                rdfs:range :Later_Nomenclatural_Synonym ;
                                
-                               rdfs:subPropertyOf :lacksPriority .
+                               rdfs:subPropertyOf :lacksPriorityInFavorOf .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isLaterTaxonomicSynonymOf
 
-:isLaterTaxonomicSynonymOf rdf:type owl:ObjectProperty ;
+:isLaterTaxonomicSynonymOf rdf:type owl:IrreflexiveProperty ,
+                                    owl:ObjectProperty ;
                            
                            rdfs:domain :Earlier_Taxonomic_Synonym ;
                            
@@ -221,7 +262,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :isSeniorHomonymOf rdf:type owl:ObjectProperty ;
                    
-                   rdfs:subPropertyOf :hasPriority ;
+                   rdfs:subPropertyOf :hasPriorityOver ;
                    
                    owl:inverseOf :isJuniorHomonymOf .
 
@@ -229,9 +270,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isSeniorObjectiveSynonymOf
 
-:isSeniorObjectiveSynonymOf rdf:type owl:ObjectProperty ;
+:isSeniorObjectiveSynonymOf rdf:type owl:IrreflexiveProperty ,
+                                     owl:ObjectProperty ;
                             
-                            rdfs:subPropertyOf :hasPriority ;
+                            rdfs:subPropertyOf :hasPriorityOver ;
                             
                             owl:inverseOf :isJuniorObjectiveSynonymOf .
 
@@ -239,7 +281,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isSeniorPrimaryHomonym
 
-:isSeniorPrimaryHomonym rdf:type owl:ObjectProperty ;
+:isSeniorPrimaryHomonym rdf:type owl:IrreflexiveProperty ,
+                                 owl:ObjectProperty ;
                         
                         owl:inverseOf :isJuniorPrimaryHomonymOf ;
                         
@@ -249,7 +292,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isSeniorSecondaryHomonym
 
-:isSeniorSecondaryHomonym rdf:type owl:ObjectProperty ;
+:isSeniorSecondaryHomonym rdf:type owl:IrreflexiveProperty ,
+                                   owl:ObjectProperty ;
                           
                           owl:inverseOf :isJuniorSecondaryHomonymOf ;
                           
@@ -259,7 +303,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#isSeniorSubjectiveSynonymOf
 
-:isSeniorSubjectiveSynonymOf rdf:type owl:ObjectProperty ;
+:isSeniorSubjectiveSynonymOf rdf:type owl:IrreflexiveProperty ,
+                                      owl:ObjectProperty ;
                              
                              owl:inverseOf :isJuniorSubjectiveSynonymOf ;
                              
@@ -273,7 +318,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                         
                         rdfs:comment "An assertion that one name of a pair should not be used for subjective/taxonomic reasons."^^xsd:string ;
                         
-                        rdfs:subPropertyOf :lacksPriority .
+                        rdfs:subPropertyOf :lacksPriorityInFavorOf .
 
 
 
@@ -283,33 +328,40 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                         
                         rdfs:comment "An assertion that one name of a pair should  be used in favor of the other for subjective/taxonomic reasons."^^xsd:string ;
                         
-                        rdfs:subPropertyOf :hasPriority ;
+                        rdfs:subPropertyOf :hasPriorityOver ;
                         
                         owl:inverseOf :isSubjectivelyJuniorTo .
 
 
 
-###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#lacksPriority
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#lacksPriorityInFavorOf
 
-:lacksPriority rdf:type owl:ObjectProperty ;
-               
-               rdfs:comment "One name of the pair should not be used because it lacks priority (and is not used for nomenclatural reasons)."^^xsd:string ;
-               
-               owl:inverseOf :hasPriority ;
-               
-               rdfs:subPropertyOf owl:topObjectProperty .
+:lacksPriorityInFavorOf rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:comment "One name of the pair should not be used because it lacks priority (and is not used for nomenclatural reasons)."^^xsd:string ;
+                        
+                        owl:inverseOf :hasPriorityOver ;
+                        
+                        rdfs:subPropertyOf :relatedPairsOfNames .
 
 
 
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#rejectedInFavorOf
 
-:rejectedInFavorOf rdf:type owl:ObjectProperty ;
+:rejectedInFavorOf rdf:type owl:IrreflexiveProperty ,
+                            owl:ObjectProperty ;
                    
                    rdfs:range :Conserved_Name ;
                    
                    rdfs:domain :Rejected_Name ;
                    
-                   rdfs:subPropertyOf :lacksPriority .
+                   rdfs:subPropertyOf :lacksPriorityInFavorOf .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#relatedPairsOfNames
+
+:relatedPairsOfNames rdf:type owl:ObjectProperty .
 
 
 
@@ -331,9 +383,36 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 
+###  http://www.w3.org/2004/02/skos/core#hasBroader
+
+skos:hasBroader rdf:type owl:ObjectProperty .
+
+
+
 ###  http://www.w3.org/2004/02/skos/core#related
 
 skos:related rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+
+skos:definition rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+
+skos:scopeNote rdf:type owl:DatatypeProperty .
 
 
 
@@ -351,6 +430,11 @@ skos:related rdf:type owl:ObjectProperty .
 :Absolute_Synonym rdf:type owl:Class ;
                   
                   rdfs:subClassOf :Not_Acceptable_Under_Governing_Code ;
+                  
+                  <http://purl.org/dc/elements/1.1/description> "A general term for synonyms based upon the same type.  "^^xsd:string ,
+                                                                "Hawksworth: \"A homotypic synonym, a nomenclatural synonym (botany), an objective synonym (zoology). \""^^xsd:string ;
+                  
+                  rdfs:comment "Implied Junior/Later Absolute Synonym"^^xsd:string ;
                   
                   <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -411,6 +495,10 @@ skos:related rdf:type owl:ObjectProperty .
 :Approved_Name_ICNP rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Acceptable_Under_Governing_Code ;
+                    
+                    rdfs:comment "ICNP Approved Name"^^xsd:string ;
+                    
+                    <http://purl.org/dc/elements/1.1/title> "nomen approbatum"^^xsd:string ;
                     
                     <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -488,6 +576,8 @@ skos:related rdf:type owl:ObjectProperty .
                 rdfs:comment "A name that should not be acceptable under the governing code, but which has been conserved by an action of the relevant code governed body."^^xsd:string ;
                 
                 :example "Hemerobius elegans Guérin-Méneville, 1844"^^xsd:string ;
+                
+                <http://purl.org/dc/elements/1.1/title> "nomen conservandum"^^xsd:string ;
                 
                 <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -793,7 +883,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                            rdfs:subClassOf :Junior_Synonym ,
                                            :TaxonomicEventStatus ;
                            
-                           <http://purl.org/dc/elements/1.1/type> "Term"  .
+                           <http://purl.org/dc/elements/1.1/type> "Term" .
 
 
 
@@ -803,7 +893,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                                    
                                    rdfs:subClassOf :Junior_Subjective_Synonym ;
                                    
-                                   <http://purl.org/dc/elements/1.1/type> "Term"  .
+                                   <http://purl.org/dc/elements/1.1/type> "Term" .
 
 
 
@@ -937,7 +1027,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                      
                      rdfs:subClassOf :NomenclaturalEventType ;
                      
-                     <http://purl.org/dc/elements/1.1/title> "nom nov"^^xsd:string ;
+                     <http://purl.org/dc/elements/1.1/title> "nom nov"@la ;
                      
                      <http://purl.org/dc/elements/1.1/type> "Category" .
 
@@ -961,7 +1051,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :Nomen_Imaginatum rdf:type owl:Class ;
                   
-                  rdfs:label "nomen imaginatum"^^xsd:string ;
+                  rdfs:label "nomen imaginatum"@la ;
                   
                   :example "Aus bus Jones"^^xsd:string ;
                   
@@ -969,7 +1059,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                   
                   :example "Peziza araneosa  Apocr."^^xsd:string ;
                   
-                  <http://purl.org/dc/elements/1.1/title> "nomen imagniatum"^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/title> "nomen imagniatum"@la ;
                   
                   <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -983,7 +1073,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
              
              rdfs:comment "ICZN Glossary: \"a name that, if published before 1931, fails to conform to Article 12; or, if published after 1930, fails to conform to Article 13. A nomen nudum is not an available name, and therefore the same name may be made available later for the same or a different concept; in such a case it would take authorship and date [Arts. 50, 21] from that act of establishment, not from any earlier publication as a nomen nudum.\""^^xsd:string ;
              
-             <http://purl.org/dc/elements/1.1/title> "nomen nudem"^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/title> "nomen nudem"@la ;
+
+             rdfs:label "nomen nudem"@la ;
              
              <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -1495,10 +1587,10 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 
 :gen_et_sp_nov rdf:type owl:Class ;
                
-               rdfs:subClassOf :New_scientific_name ;
+               rdfs:subClassOf :New_scientific_name ; skos:hasBroader :New_scientific_name ;
                
                <http://purl.org/dc/elements/1.1/title> "The similtaneous creation of a new monotypic genus and its type species."^^xsd:string ,
-                                                       "gen. et sp. nov."^^xsd:string ;
+                                                       "gen. et sp. nov."@la ;
                
                <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -1534,9 +1626,9 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 
 :nom_novICBN rdf:type owl:Class ;
              
-             rdfs:subClassOf :New_scientific_name ;
+             rdfs:subClassOf :New_scientific_name ; skos:hasBroader :New_scientific_name ;
              
-             <http://purl.org/dc/elements/1.1/title> "nom. nov."^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/title> "nom. nov."@la ;
              
              <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -1556,9 +1648,9 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 
 :sp_nov rdf:type owl:Class ;
         
-        rdfs:subClassOf :New_scientific_name ;
+        rdfs:subClassOf :New_scientific_name ; skos:hasBroader :New_scientific_name ;
         
-        <http://purl.org/dc/elements/1.1/title> "sp. nov."^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/title> "sp. nov."@la ;
         
         <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -1568,9 +1660,9 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 
 :ssp_nov rdf:type owl:Class ;
          
-         rdfs:subClassOf :New_scientific_name ;
+         rdfs:subClassOf :New_scientific_name ; skos:hasBroader :New_scientific_name ;
          
-         <http://purl.org/dc/elements/1.1/title> "ssp. nov."^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/title> "ssp. nov."@la ;
          
          <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -1580,7 +1672,7 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 
 :stat_nov rdf:type owl:Class ;
           
-          rdfs:subClassOf :Change_of_combination ;
+          rdfs:subClassOf :Change_of_combination ; skos:hasBroader :Change_of_combination ;
           
           <http://purl.org/dc/elements/1.1/type> "Term" .
 
@@ -1590,11 +1682,17 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 
 :var_nov rdf:type owl:Class ;
          
-         rdfs:subClassOf :New_scientific_name ;
+         rdfs:subClassOf :New_scientific_name ; skos:hasBroader :New_scientific_name ;
          
-         <http://purl.org/dc/elements/1.1/title> "var. nov."^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/title> "var. nov."@la ;
          
          <http://purl.org/dc/elements/1.1/type> "Term" .
+
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+
+owl:Thing rdf:type owl:Class .
 
 
 
@@ -1607,11 +1705,58 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 #################################################################
 
 
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Absolute_Synonym
+
+:Absolute_Synonym rdf:type owl:NamedIndividual ;
+                  
+                  <http://purl.org/dc/elements/1.1/description> "A general term for synonyms based upon the same type.  "^^xsd:string ,
+                                                                "Hawksworth: \"A homotypic synonym, a nomenclatural synonym (botany), an objective synonym (zoology). \""^^xsd:string ;
+                  
+                  rdfs:comment "Implied Junior/Later Absolute Synonym"^^xsd:string ;
+                  
+                  <http://purl.org/dc/elements/1.1/type> "Term" ;
+                  
+                  :appliesInGoverningCode :ICBN ,
+                                          :ICNP ,
+                                          :ICZN ;
+                  
+                  skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Acceptable_Under_Governing_Code
+
+:Acceptable_Under_Governing_Code rdf:type owl:NamedIndividual ;
+                                 
+                                 rdfs:comment "Statuses of nomenclatural acts that are acceptable statuses under the governing code."^^xsd:string ;
+                                 
+                                 <http://purl.org/dc/elements/1.1/type> "Category" .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Acceptable_Under_Governing_Code
+
+:Acceptable_Under_Governing_Code rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Accepted_Name
+
+:Accepted_Name rdf:type owl:NamedIndividual ;
+               
+               <http://purl.org/dc/elements/1.1/type> "Term" .
+
+
+
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Alternative_name
 
 :Alternative_name rdf:type owl:NamedIndividual ;
                   
+                  skos:scopeNote "ICBN"^^xsd:string ;
+                  
                   rdfs:comment "ICBN"^^xsd:string ;
+                  
+                  skos:definition "One of a set of two or more different names proposed at the same time by the same author for the same taxon."^^xsd:string ;
                   
                   <http://purl.org/dc/elements/1.1/description> "One of a set of two or more different names proposed at the same time by the same author for the same taxon."^^xsd:string ;
                   
@@ -1623,13 +1768,50 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 
 
 
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Ambiguuous_Name
+
+:Ambiguuous_Name rdf:type owl:NamedIndividual ;
+                 
+                 <http://purl.org/dc/elements/1.1/type> "Term" ;
+                 
+                 skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Approved_Name_ICNP
 
 :Approved_Name_ICNP rdf:type owl:NamedIndividual ;
                     
+                    rdfs:comment "ICNP Approved Name"^^xsd:string ;
+                    
+                    <http://purl.org/dc/elements/1.1/title> "nomen approbatum"^^xsd:string ;
+                    
                     <http://purl.org/dc/elements/1.1/type> "Term" ;
                     
+                    skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                    :Acceptable_Under_Governing_Code ;
+                    
                     :appliesInGoverningCode :ICNP .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Aus_bus
+
+:Aus_bus rdf:type :Nomen_Imaginatum ,
+                  owl:NamedIndividual ,
+                  owl:Thing ;
+         
+         :isSeniorObjectiveSynonymOf :Cus_dus .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Autonym_Avoidance
+
+:Autonym_Avoidance rdf:type owl:NamedIndividual ;
+                   
+                   <http://purl.org/dc/elements/1.1/type> "Term" ;
+                   
+                   skos:hasBroader :Replacement_of_a_name .
 
 
 
@@ -1639,10 +1821,27 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
                 
                 <http://purl.org/dc/elements/1.1/type> "Term" ;
                 
+                skos:definition "Nomenclatural act statuses that are available names under the International Code of Zoological Nomenclature." ;
+                
+                skos:scopeNote "ICZN" ;
+                
                 <http://purl.org/dc/elements/1.1/description> "Nomenclatural act statuses that are available names under the International Code of Zoological Nomenclature." ;
+                
+                skos:scopeNote "ICBN" ;
+                
+                skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                :Acceptable_Under_Governing_Code ;
                 
                 :appliesInGoverningCode :ICBN ,
                                         :ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Change_of_combination
+
+:Change_of_combination rdf:type owl:NamedIndividual ;
+                       
+                       <http://purl.org/dc/elements/1.1/type> "Category" .
 
 
 
@@ -1676,10 +1875,60 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
                 
                 :example "Hemerobius elegans Guérin-Méneville, 1844"^^xsd:string ;
                 
+                <http://purl.org/dc/elements/1.1/title> "nomen conservandum"^^xsd:string ;
+                
                 <http://purl.org/dc/elements/1.1/type> "Term" ;
+                
+                skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                :Acceptable_Under_Governing_Code ;
                 
                 :appliesInGoverningCode :ICBN ,
                                         :ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Corrected_Name
+
+:Corrected_Name rdf:type owl:NamedIndividual ;
+                
+                <http://purl.org/dc/elements/1.1/title> "nomen correctum"^^xsd:string ;
+                
+                <http://purl.org/dc/elements/1.1/type> "Term" ;
+                
+                skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Creation_of_Justifed_Emendation
+
+:Creation_of_Justifed_Emendation rdf:type owl:NamedIndividual ;
+                                 
+                                 <http://purl.org/dc/elements/1.1/title> "ICZN"^^xsd:string ;
+                                 
+                                 <http://purl.org/dc/elements/1.1/type> "Term" ;
+                                 
+                                 skos:hasBroader :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Creation_of_Unjustified_Emendation
+
+:Creation_of_Unjustified_Emendation rdf:type owl:NamedIndividual ;
+                                    
+                                    rdfs:comment "ICZN:  Any change in spelling other than a Justified Emendation"^^xsd:string ;
+                                    
+                                    <http://purl.org/dc/elements/1.1/type> "Term" ;
+                                    
+                                    skos:hasBroader :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Cus_dus
+
+:Cus_dus rdf:type :Nomen_Imaginatum ,
+                  owl:NamedIndividual ,
+                  owl:Thing .
 
 
 
@@ -1705,6 +1954,8 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                            
                            <http://purl.org/dc/elements/1.1/type> "Term" ;
+                           
+                           skos:hasBroader :Accepted_Name ;
                            
                            :appliesInGoverningCode :ICBN ;
                            
@@ -1733,7 +1984,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                                  
                                  <http://purl.org/dc/elements/1.1/type> "Term" ;
                                  
-                                 :appliesInGoverningCode :ICZN .
+                                 :appliesInGoverningCode :ICZN ;
+                                 
+                                 skos:hasBroader :Replacement_of_a_name .
 
 
 
@@ -1744,6 +1997,18 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                                 <http://purl.org/dc/elements/1.1/type> "Term" ;
                                 
                                 :appliesInGoverningCode :ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Historical_Synonym
+
+:Historical_Synonym rdf:type owl:NamedIndividual ;
+                    
+                    rdfs:comment "ICNP.  Synonyms not included in the Approved List.  Generally placed in single quotes when included in a synonymy.  "^^xsd:string ;
+                    
+                    <http://purl.org/dc/elements/1.1/type> "Term" ;
+                    
+                    skos:hasBroader :Not_Acceptable_Under_Governing_Code .
 
 
 
@@ -1774,6 +2039,49 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
       <http://purl.org/dc/elements/1.1/title> "International Code of Zoological Nomenclature"^^xsd:string ;
       
       <http://purl.org/dc/elements/1.1/type> "Term" .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Illigetimate_Name
+
+:Illigetimate_Name rdf:type owl:NamedIndividual ;
+                   
+                   <http://purl.org/dc/elements/1.1/type> "Term" ;
+                   
+                   skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Incorrect_Subsequent_Spelling
+
+:Incorrect_Subsequent_Spelling rdf:type owl:NamedIndividual ;
+                               
+                               <http://purl.org/dc/elements/1.1/type> "Term" ;
+                               
+                               skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Independent_Name
+
+:Independent_Name rdf:type owl:NamedIndividual ;
+                  
+                  rdfs:comment "Independent Names.  ICNP.  Names that are not homonyms because they are subject to different codes."^^xsd:string ;
+                  
+                  <http://purl.org/dc/elements/1.1/type> "Term" ;
+                  
+                  skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                  :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Invalid_Name_ICBN
+
+:Invalid_Name_ICBN rdf:type owl:NamedIndividual ;
+                   
+                   <http://purl.org/dc/elements/1.1/type> "Term" ;
+                   
+                   skos:hasBroader :Not_Acceptable_Under_Governing_Code .
 
 
 
@@ -1816,12 +2124,25 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 :Junior_Subjective_Synonym rdf:type owl:NamedIndividual ;
                            
-                           <http://purl.org/dc/elements/1.1/type> "Term"  ;
+                           <http://purl.org/dc/elements/1.1/type> "Term" ;
                            
                            :appliesInGoverningCode :ICNP ,
                                                    :ICZN ;
                            
                            skos:related :Later_Taxonomic_Synonym .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Justified_Emendation
+
+:Justified_Emendation rdf:type owl:NamedIndividual ;
+                      
+                      rdfs:comment "ICZN:  Correction of an incorrect original spelling."^^xsd:string ;
+                      
+                      <http://purl.org/dc/elements/1.1/type> "Term" ;
+                      
+                      skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                      :Acceptable_Under_Governing_Code .
 
 
 
@@ -1851,6 +2172,110 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 
 
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Legitimate
+
+:Legitimate rdf:type owl:NamedIndividual ;
+            
+            rdfs:comment "ICBN, ICNP"^^xsd:string ;
+            
+            <http://purl.org/dc/elements/1.1/type> "Term" ;
+            
+            skos:hasBroader :Acceptable_Under_Governing_Code ,
+                            :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Name_in_opus_utique_oppr
+
+:Name_in_opus_utique_oppr rdf:type owl:NamedIndividual ;
+                          
+                          <http://purl.org/dc/elements/1.1/type> "Term" ;
+                          
+                          skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#New_scientific_name
+
+:New_scientific_name rdf:type owl:NamedIndividual ;
+                     
+                     <http://purl.org/dc/elements/1.1/title> "nom nov"^^xsd:string ;
+                     
+                     <http://purl.org/dc/elements/1.1/type> "Category" .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Newer_Homonym
+
+:Newer_Homonym rdf:type owl:NamedIndividual ;
+               
+               rdfs:comment "General Category."^^xsd:string ;
+               
+               <http://purl.org/dc/elements/1.1/description> "More recently published name that has the same spelling as an earlier name for a different type."^^xsd:string ;
+               
+               <http://purl.org/dc/elements/1.1/type> "Category" ;
+               
+               skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Oblitum
+
+:Nomen_Oblitum rdf:type owl:NamedIndividual ;
+               
+               rdfs:comment "ICZN Glossary: \"applied after 1 January 2000 to a name, unused since 1899, which as a result of an action taken under Article 23.9.2 does not take precedence over a younger synonym or homonym in prevailing usage; the younger name which takes precedence over the nomen oblitum may be called a nomen protectum (q.v.). The term nomen oblitum was also applied to a disused senior synonym rejected between 6 November 1961 and 1 January 1973 under Article 23b of the Code editions then in force (see Article 23.12.2). Nomina oblita remain available names; see Articles 23.9 and 23.12 for conditions controlling their use as valid names.\""^^xsd:string ,
+                            "ICZN.  A name who's priority has been quashed."^^xsd:string ;
+               
+               <http://purl.org/dc/elements/1.1/title> "nomen oblitum"^^xsd:string ;
+               
+               <http://purl.org/dc/elements/1.1/type> "Term" ;
+               
+               skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Not_Acceptable_Under_Governing_Code
+
+:Not_Acceptable_Under_Governing_Code rdf:type owl:NamedIndividual ;
+                                     
+                                     <http://purl.org/dc/elements/1.1/type> "Category" .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Not_Acceptable_Under_Governing_Code
+
+:Not_Acceptable_Under_Governing_Code rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Potentially_Valid_ICZN
+
+:Potentially_Valid_ICZN rdf:type owl:NamedIndividual ;
+                        
+                        <http://purl.org/dc/elements/1.1/type> "Term" ;
+                        
+                        skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                        :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Protected_Name
+
+:Protected_Name rdf:type owl:NamedIndividual ;
+                
+                rdfs:comment "ICZN Glossary: \"applied to a name which has been given precedence over its unused senior synonym or senior homonym relegated to the status of nomen oblitum (q.v., and see Article 23.9.2)\""^^xsd:string ;
+                
+                <http://purl.org/dc/elements/1.1/title> "nomen protectum"^^xsd:string ;
+                
+                <http://purl.org/dc/elements/1.1/type> "Term" ;
+                
+                skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                :Acceptable_Under_Governing_Code ;
+                
+                rdfs:seeAlso :Forgotten_Name .
+
+
+
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Published_ICZN
 
 :Published_ICZN rdf:type owl:NamedIndividual ;
@@ -1858,6 +2283,37 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                 <http://purl.org/dc/elements/1.1/type> "Term" ;
                 
                 :appliesInGoverningCode :ICZN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Reinstated_Name
+
+:Reinstated_Name rdf:type owl:NamedIndividual ;
+                 
+                 <http://purl.org/dc/elements/1.1/type> "Term" ;
+                 
+                 skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                 :Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected_Name
+
+:Rejected_Name rdf:type owl:NamedIndividual ;
+               
+               rdfs:comment "A name that has been rejected by an act of the relevant code governed body (the Zoological Commissioners or a Botanical Congress)."^^xsd:string ;
+               
+               <http://purl.org/dc/elements/1.1/type> "Term" ;
+               
+               skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Replacement_of_a_name
+
+:Replacement_of_a_name rdf:type owl:NamedIndividual ;
+                       
+                       <http://purl.org/dc/elements/1.1/type> "Category" .
 
 
 
@@ -1876,6 +2332,9 @@ However,  between 1950 and 1981, three works later than Species Plantarum were s
                  :example "Peziza araneosa Bull. :Fr."^^xsd:string ;
                  
                  <http://purl.org/dc/elements/1.1/type> "Term" ;
+                 
+                 skos:hasBroader :Acceptable_Under_Governing_Code ,
+                                 :Acceptable_Under_Governing_Code ;
                  
                  :appliesInGoverningCode :ICBN .
 
@@ -1942,6 +2401,8 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
                            
                            <http://purl.org/dc/elements/1.1/type> "Term" ;
                            
+                           skos:hasBroader :Accepted_Name ;
+                           
                            skos:related :Earlier_Taxonomic_Synonym ;
                            
                            :appliesInGoverningCode :ICNP ,
@@ -1951,14 +2412,158 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 
 
 
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Subsequent_Misspelling
+
+:Subsequent_Misspelling rdf:type owl:NamedIndividual ;
+                        
+                        <http://purl.org/dc/elements/1.1/type> "Term" ;
+                        
+                        skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Substitute_Name
+
+:Substitute_Name rdf:type owl:NamedIndividual ;
+                 
+                 rdfs:comment "Avowed substitute"^^xsd:string ;
+                 
+                 <http://purl.org/dc/elements/1.1/type> "Term" ;
+                 
+                 skos:hasBroader :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Superfluous_name
+
+:Superfluous_name rdf:type owl:NamedIndividual ;
+                  
+                  <http://purl.org/dc/elements/1.1/type> "Term" ;
+                  
+                  skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Tautonym_Avoidance
+
+:Tautonym_Avoidance rdf:type owl:NamedIndividual ;
+                    
+                    <http://purl.org/dc/elements/1.1/type> "Term" ;
+                    
+                    skos:hasBroader :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Unjustified_Emendation
+
+:Unjustified_Emendation rdf:type owl:NamedIndividual ;
+                        
+                        rdfs:comment "ICZN"^^xsd:string ;
+
+                        skos:scopeNote "ICZN"^^xsd:string ;
+
+                        :appliesInGoverningCode :ICBN ;
+                        
+                        <http://purl.org/dc/elements/1.1/description> "ICZN:  Any change in spelling other than a Justified Emendation"^^xsd:string ;
+                        
+                        <http://purl.org/dc/elements/1.1/type> "Term" ;
+                        
+                        skos:hasBroader :Not_Acceptable_Under_Governing_Code .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Valid_ICBN
+
+:Valid_ICBN rdf:type owl:NamedIndividual ;
+            
+            <http://purl.org/dc/elements/1.1/type> "Term" ;
+            
+            skos:hasBroader :Acceptable_Under_Governing_Code .
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Valid_ICZN
+
+:Valid_ICZN rdf:type owl:NamedIndividual ;
+            
+            <http://purl.org/dc/elements/1.1/type> "Term" ;
+            
+            skos:hasBroader :Accepted_Name .
+
+
+
 ###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Validly_Published_ICNP_ICBN
 
 :Validly_Published_ICNP_ICBN rdf:type owl:NamedIndividual ;
                              
                              <http://purl.org/dc/elements/1.1/type> "Term" ;
                              
+                             skos:hasBroader :Acceptable_Under_Governing_Code ;
+
+                             skos:scopeNote :ICBN ,
+                                            :ICNP ;
+                             
                              :appliesInGoverningCode :ICBN ,
                                                      :ICNP .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#gen_et_sp_nov
+
+:gen_et_sp_nov rdf:type owl:NamedIndividual ;
+               
+               skos:definition "The similtaneous creation of a new monotypic genus and its type species."^^xsd:string ;
+
+               <http://purl.org/dc/elements/1.1/title> "gen. et sp. nov."@la ;
+               
+               <http://purl.org/dc/elements/1.1/type> "Term" ;
+               
+               skos:hasBroader :New_scientific_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#nom_novICBN
+
+:nom_novICBN rdf:type owl:NamedIndividual ;
+             
+             <http://purl.org/dc/elements/1.1/title> "nom. nov."@la ;
+             
+             <http://purl.org/dc/elements/1.1/type> "Term" ;
+             
+             skos:hasBroader :New_scientific_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#nom_novICZN
+
+:nom_novICZN rdf:type owl:NamedIndividual ;
+             
+             <http://purl.org/dc/elements/1.1/type> "Term" ;
+             
+             skos:hasBroader :Replacement_of_a_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#sp_nov
+
+:sp_nov rdf:type owl:NamedIndividual ;
+        
+        <http://purl.org/dc/elements/1.1/title> "sp. nov."@la ;
+        
+        <http://purl.org/dc/elements/1.1/type> "Term" ;
+        
+        skos:hasBroader :New_scientific_name .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ssp_nov
+
+:ssp_nov rdf:type owl:NamedIndividual ;
+         
+         <http://purl.org/dc/elements/1.1/title> "ssp. nov."@la ;
+         
+         <http://purl.org/dc/elements/1.1/type> "Term" ;
+         
+         skos:hasBroader :New_scientific_name .
 
 
 
@@ -1967,13 +2572,29 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 :stat_nov rdf:type owl:NamedIndividual ;
           
           <http://purl.org/dc/elements/1.1/type> "Term" ;
+
+          <http://purl.org/dc/elements/1.1/title> "stat. nov."@la ;
+          
+          skos:hasBroader :Change_of_combination ;
           
           :appliesInGoverningCode :ICBN .
+
+
+
+###  http://www.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#var_nov
+
+:var_nov rdf:type owl:NamedIndividual ;
+         
+         <http://purl.org/dc/elements/1.1/title> "var. nov."@la ;
+         
+         <http://purl.org/dc/elements/1.1/type> "Term" ;
+         
+         skos:hasBroader :New_scientific_name .
 
 
 
 [ :appliesInGoverningCode :ICZN
 ] .
 
-###  Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net
 

@@ -10,7 +10,7 @@
 
 <http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl> rdf:type owl:Ontology ;
                                                                                          
-                                                                                         owl:versionInfo 0.7 ;
+                                                                                         owl:versionInfo 0.8 ;
                                                                                          
                                                                                          dc:description "An ontological treatment of terms for Nomenclatural Acts/Events, Nomenclatural Events, and terms for the Nomenclatural Status and Taxonomic Status that can result from such events."^^xsd:string ;
                                                                                          
@@ -36,7 +36,7 @@ http://www.ncbi.nlm.nih.gov/books/NBK8817/"""^^xsd:string ;
                                                                                          
                                                                                          dc:contributor "Robert A. Morris"^^xsd:string ;
                                                                                          
-                                                                                         skos:editorialNote "As of version 0.6, moving from a set of singleton classes with like named individuals to primarily individuals in a few classes along with a larger set of object properties."@en ,
+                                                                                         skos:editorialNote "Up to version 0.6, used a set of singleton classes with like named individuals, after version 0.8, using individuals in a few classes along with a larger set of object properties."@en ,
                                                                                                             "Currently includes examples, Aus dus and Cus dus.  These should move to a separate ontology document."@en ;
                                                                                          
                                                                                          <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements> "For a set of taxon name appearances in a synonomy, which appearance is the usage that represents the author of the synonomy's view of the current name to use?"@en ,
@@ -612,22 +612,22 @@ skos:related rdf:type owl:ObjectProperty .
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Acceptable_Under_Governing_Code
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#AcceptableUnderGoverningCode
 
-:Acceptable_Under_Governing_Code rdf:type owl:Class ;
+:AcceptableUnderGoverningCode rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :NomenclaturalActStatus ;
                                  
-                                 owl:disjointWith :Not_Acceptable_Under_Governing_Code ;
+                                 owl:disjointWith :NotAcceptableUnderGoverningCode ;
                                  
                                  rdfs:comment "Statuses of nomenclatural acts that are acceptable statuses under the governing code."^^xsd:string ;
                                  
                                  dc:type "Category" .
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Change_of_Type
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ChangeOfType
 
-:Change_of_Type rdf:type owl:Class ;
+:ChangeOfType rdf:type owl:Class ;
                 
                 rdfs:subClassOf :NomenclaturalEventType ;
 
@@ -639,9 +639,9 @@ skos:related rdf:type owl:ObjectProperty .
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Imaginatum
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#NomenImaginatum
 
-:Nomen_Imaginatum rdf:type owl:Class ;
+:NomenImaginatum rdf:type owl:Class ;
                   
                   skos:prefLabel "nomen imaginatum"@la ;
 
@@ -692,9 +692,9 @@ skos:related rdf:type owl:ObjectProperty .
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Not_Acceptable_Under_Governing_Code
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#NotAcceptableUnderGoverningCode
 
-:Not_Acceptable_Under_Governing_Code rdf:type owl:Class ;
+:NotAcceptableUnderGoverningCode rdf:type owl:Class ;
                                      
                                      rdfs:subClassOf :NomenclaturalActStatus ;
                                      
@@ -702,9 +702,9 @@ skos:related rdf:type owl:ObjectProperty .
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Replacement_of_a_name
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ReplacementOfAName
 
-:Replacement_of_a_name rdf:type owl:Class ;
+:ReplacementOfAName rdf:type owl:Class ;
                        
                        rdfs:subClassOf :NomenclaturalEventType ;
                        
@@ -754,7 +754,7 @@ skos:Concept rdf:type owl:Class .
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Absolute_Synonym
 
 :Absolute_Synonym rdf:type owl:NamedIndividual ,
-                           :Not_Acceptable_Under_Governing_Code ,
+                           :NotAcceptableUnderGoverningCode ,
                            skos:Concept ;
                   
                   dc:description "A general term for synonyms based upon the same type."^^xsd:string ,
@@ -783,9 +783,9 @@ skos:Concept rdf:type owl:Class .
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Acceptable_Under_Governing_Code
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#AcceptableUnderGoverningCode
 
-:Acceptable_Under_Governing_Code rdf:type owl:NamedIndividual ,
+:AcceptableUnderGoverningCode rdf:type owl:NamedIndividual ,
                                           skos:Concept ;
                                  
                                  rdfs:comment "Statuses of nomenclatural acts that are acceptable statuses under the governing code."^^xsd:string ;
@@ -793,9 +793,9 @@ skos:Concept rdf:type owl:Class .
                                  dc:type "Category" .
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Change_of_Type
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ChangeOfType
 
-:Change_of_Type rdf:type owl:NamedIndividual ,
+:ChangeOfType rdf:type owl:NamedIndividual ,
                          :NomenclaturalEventType ,
                          skos:Concept ;
 
@@ -853,7 +853,7 @@ skos:Concept rdf:type owl:Class .
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Ambiguous_Name
 
 :Ambiguous_Name rdf:type owl:NamedIndividual ,
-                          :Not_Acceptable_Under_Governing_Code ,
+                          :NotAcceptableUnderGoverningCode ,
                           skos:Concept ;
                  
                  dc:type "Term" ;
@@ -866,13 +866,13 @@ skos:Concept rdf:type owl:Class .
 
                  skos:definition "A name that has been used by different authors for different taxonomic concepts in a manner that has lead to repeated errors and confusion" ;
                  
-                 skos:broader :Not_Acceptable_Under_Governing_Code .
+                 skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Approved_Name_ICNP
 
-:Approved_Name_ICNP rdf:type :Acceptable_Under_Governing_Code ,
+:Approved_Name_ICNP rdf:type :AcceptableUnderGoverningCode ,
                              owl:NamedIndividual ,
                              skos:Concept ;
                     
@@ -892,7 +892,7 @@ skos:Concept rdf:type owl:Class .
                     
                     dc:title "nomen approbatum"@la ;
                     
-                    skos:broader :Acceptable_Under_Governing_Code ;
+                    skos:broader :AcceptableUnderGoverningCode ;
                     
                     :appliesInGoverningCode :ICNP .
 
@@ -900,7 +900,7 @@ skos:Concept rdf:type owl:Class .
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Aus_bus
 
-:Aus_bus rdf:type :Nomen_Imaginatum ,
+:Aus_bus rdf:type :NomenImaginatum ,
                   owl:NamedIndividual ,
                   owl:Thing ;
          
@@ -911,21 +911,21 @@ skos:Concept rdf:type owl:Class .
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Autonym_Avoidance
 
 :Autonym_Avoidance rdf:type owl:NamedIndividual ,
-                            :Replacement_of_a_name ,
+                            :ReplacementOfAName ,
                             skos:Concept ;
                    
                    dc:type "Term" ;
 
                    skos:prefLabel "Autonym avoidance" ;
                    
-                   skos:broader :Replacement_of_a_name .
+                   skos:broader :ReplacementOfAName .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Available_ICZN
 
 :Available_ICZN rdf:type owl:NamedIndividual ,
-                         :Acceptable_Under_Governing_Code ,
+                         :AcceptableUnderGoverningCode ,
                          skos:Concept ;
                 
                 dc:description "Nomenclatural act statuses that are available names under the International Code of Zoological Nomenclature." ;
@@ -936,7 +936,7 @@ skos:Concept rdf:type owl:Class .
                 
                 dc:type "Term" ;
                 
-                skos:broader :Acceptable_Under_Governing_Code ;
+                skos:broader :AcceptableUnderGoverningCode ;
                 
                 :appliesInGoverningCode :ICZN .
 
@@ -1000,7 +1000,7 @@ skos:Concept rdf:type owl:Class .
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Conserved_Name
 
 :Conserved_Name rdf:type owl:NamedIndividual ,
-                         :Acceptable_Under_Governing_Code ,
+                         :AcceptableUnderGoverningCode ,
                          skos:Concept ;
                 
                 rdfs:comment "A name that should not be acceptable under the governing code, but which has been conserved by an action of the relevant code governed body."^^xsd:string ;
@@ -1019,7 +1019,7 @@ skos:Concept rdf:type owl:Class .
                 
                 dc:title "nomen conservandum"@la ;
                 
-                skos:broader :Acceptable_Under_Governing_Code ;
+                skos:broader :AcceptableUnderGoverningCode ;
                 
                 :appliesInGoverningCode :ICBN ,
                                         :ICZN .
@@ -1029,7 +1029,7 @@ skos:Concept rdf:type owl:Class .
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Corrected_Name
 
 :Corrected_Name rdf:type owl:NamedIndividual ,
-                         :Acceptable_Under_Governing_Code ,
+                         :AcceptableUnderGoverningCode ,
                          skos:Concept ;
                 
                 skos:prefLabel "nomen correctum"@la ;
@@ -1040,14 +1040,14 @@ skos:Concept rdf:type owl:Class .
                 
                 dc:title "nomen correctum"@la ;
                 
-                skos:broader :Acceptable_Under_Governing_Code .
+                skos:broader :AcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Creation_of_Justifed_Emendation
 
 :Creation_of_Justifed_Emendation rdf:type owl:NamedIndividual ,
-                                          :Replacement_of_a_name ,
+                                          :ReplacementOfAName ,
                                           skos:Concept ;
                                  
                                  dc:title "ICZN"^^xsd:string ;
@@ -1058,14 +1058,14 @@ skos:Concept rdf:type owl:Class .
                                  
                                  :appliesInGoverningCode :ICZN ;
                                  
-                                 skos:broader :Replacement_of_a_name .
+                                 skos:broader :ReplacementOfAName .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Creation_of_Unjustified_Emendation
 
 :Creation_of_Unjustified_Emendation rdf:type owl:NamedIndividual ,
-                                             :Replacement_of_a_name ,
+                                             :ReplacementOfAName ,
                                              skos:Concept ;
                                     
                                     rdfs:comment "ICZN:  Any change in spelling other than a Justified Emendation"^^xsd:string ;
@@ -1078,13 +1078,13 @@ skos:Concept rdf:type owl:Class .
                                     
                                     :appliesInGoverningCode :ICZN ;
                                     
-                                    skos:broader :Replacement_of_a_name .
+                                    skos:broader :ReplacementOfAName .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Cus_dus
 
-:Cus_dus rdf:type :Nomen_Imaginatum ,
+:Cus_dus rdf:type :NomenImaginatum ,
                   owl:NamedIndividual ,
                   owl:Thing .
 
@@ -1238,7 +1238,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
                                  rdfs:domain [ rdf:type owl:Restriction ;
                                                owl:onProperty :hasNomenclaturalStatus ;
-                                               owl:hasValue :Replacement_of_a_name 
+                                               owl:hasValue :ReplacementOfAName 
                                  ] ;
 
                                  skos:prefLabel "First Revisor, Choosing Spelling"@en ; 
@@ -1251,7 +1251,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                                  
                                  :appliesInGoverningCode :ICZN ;
                                  
-                                 skos:broader :Replacement_of_a_name .
+                                 skos:broader :ReplacementOfAName .
 
 
 
@@ -1278,7 +1278,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Forgotten_Name
 
 :Forgotten_Name rdf:type owl:NamedIndividual ,
-                         :Not_Acceptable_Under_Governing_Code ,
+                         :NotAcceptableUnderGoverningCode ,
                          skos:Concept ;
                 
                 skos:prefLabel "Forgotten name"@en ;
@@ -1301,7 +1301,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Historical_Synonym
 
 :Historical_Synonym rdf:type owl:NamedIndividual ,
-                             :Not_Acceptable_Under_Governing_Code ,
+                             :NotAcceptableUnderGoverningCode ,
                              skos:Concept ;
                     
                     rdfs:comment "ICNP.  Synonyms not included in the Approved List.  Generally placed in single quotes when included in a synonymy."^^xsd:string ;
@@ -1314,7 +1314,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                     
                     :appliesInGoverningCode :ICNP ;
                     
-                    skos:broader :Not_Acceptable_Under_Governing_Code .
+                    skos:broader :NotAcceptableUnderGoverningCode .
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ICBN
@@ -1374,7 +1374,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Illegitimate_Name
 
 :Illegitimate_Name rdf:type owl:NamedIndividual ,
-                            :Not_Acceptable_Under_Governing_Code ,
+                            :NotAcceptableUnderGoverningCode ,
                             skos:Concept ;
                    
                    skos:prefLabel "Illegitimate Name"@en ;
@@ -1392,28 +1392,28 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
                    dc:type "Term" ;
                    
-                   skos:broader :Not_Acceptable_Under_Governing_Code .
+                   skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Incorrect_Subsequent_Spelling
 
 :Incorrect_Subsequent_Spelling rdf:type owl:NamedIndividual ,
-                                        :Not_Acceptable_Under_Governing_Code ,
+                                        :NotAcceptableUnderGoverningCode ,
                                         skos:Concept ;
                                
                                skos:prefLabel "Incorrect subsequent spelling"@en ;
 
                                dc:type "Term" ;
                                
-                               skos:broader :Not_Acceptable_Under_Governing_Code .
+                               skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Independent_Name
 
 :Independent_Name rdf:type owl:NamedIndividual ,
-                           :Acceptable_Under_Governing_Code ,
+                           :AcceptableUnderGoverningCode ,
                            skos:Concept ;
 
                   skos:prefLabel "Names that are not homonyms because they are subject to different codes."@en ;
@@ -1424,14 +1424,14 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                   
                   dc:type "Term" ;
                   
-                  skos:broader :Acceptable_Under_Governing_Code .
+                  skos:broader :AcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Invalid_Name_ICBN
 
 :Invalid_Name_ICBN rdf:type owl:NamedIndividual ,
-                            :Not_Acceptable_Under_Governing_Code ,
+                            :NotAcceptableUnderGoverningCode ,
                             skos:Concept ;
                    
                    skos:prefLabel "Invalid name"@en ;
@@ -1444,7 +1444,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                    
                    :appliesInGoverningCode :ICBN ;
                    
-                   skos:broader :Not_Acceptable_Under_Governing_Code .
+                   skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
@@ -1474,7 +1474,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Homonym
 
 :Junior_Homonym rdf:type owl:NamedIndividual ,
-                         :Not_Acceptable_Under_Governing_Code ,
+                         :NotAcceptableUnderGoverningCode ,
                          skos:Concept ;
 
                 skos:prefLabel "Junior Homonym"@en ;                
@@ -1495,7 +1495,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Objective_Synonym
 
 :Junior_Objective_Synonym rdf:type owl:NamedIndividual ,
-                         :Not_Acceptable_Under_Governing_Code ,
+                         :NotAcceptableUnderGoverningCode ,
                                    skos:Concept ;
                           
                           skos:scopeNote "ICNP"@en ,
@@ -1522,7 +1522,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Primary_Homonym
 
 :Junior_Primary_Homonym rdf:type owl:NamedIndividual ,
-                         :Not_Acceptable_Under_Governing_Code ,
+                         :NotAcceptableUnderGoverningCode ,
                                  skos:Concept ;
 
                           skos:prefLabel "Junior Primary Homonym"@en ;
@@ -1553,7 +1553,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Junior_Secondary_Homonym
 
 :Junior_Secondary_Homonym rdf:type owl:NamedIndividual ,
-                         :Not_Acceptable_Under_Governing_Code ,
+                         :NotAcceptableUnderGoverningCode ,
                                    skos:Concept ;
                         
                           skos:prefLabel "Junior Secondary Homonym"@en ;
@@ -1656,7 +1656,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Justified_Emendation
 
 :Justified_Emendation rdf:type owl:NamedIndividual ,
-                               :Acceptable_Under_Governing_Code ,
+                               :AcceptableUnderGoverningCode ,
                                skos:Concept ;
                       
                       rdfs:comment "ICZN:  Correction of an incorrect original spelling."^^xsd:string ;
@@ -1667,7 +1667,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                       
                       dc:type "Term" ;
                       
-                      skos:broader :Acceptable_Under_Governing_Code ;
+                      skos:broader :AcceptableUnderGoverningCode ;
                       
                       :appliesInGoverningCode :ICZN .
 
@@ -1752,10 +1752,10 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Lectotypification
 
 :Lectotypification rdf:type owl:NamedIndividual ,
-                            :Change_of_Type ,
+                            :ChangeOfType ,
                             skos:Concept ;
   
-                   skos:broader :Change_of_Type ;                  
+                   skos:broader :ChangeOfType ;                  
  
                    dc:description "Selection of a Lectotype and Paralectotypes out of a Syntype series."^^xsd:string ;
 
@@ -1770,7 +1770,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Legitimate
 
 :Legitimate rdf:type owl:NamedIndividual ,
-                     :Acceptable_Under_Governing_Code ,
+                     :AcceptableUnderGoverningCode ,
                      skos:Concept ;
             
             rdfs:comment "ICBN, ICNP"^^xsd:string ;
@@ -1783,14 +1783,14 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                :appliesInGoverningCode :ICBN ,
                               :ICNP ;
                
-            skos:broader :Acceptable_Under_Governing_Code .
+            skos:broader :AcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Name_Rejected_Outright
 
 :Name_Rejected_Outright rdf:type owl:NamedIndividual ,
-                                 :Not_Acceptable_Under_Governing_Code ,
+                                 :NotAcceptableUnderGoverningCode ,
                                  skos:Concept ;
 
                 rdfs:domain [ rdf:type owl:Restriction ;
@@ -1810,22 +1810,22 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Name_in_opus_utique_oppr
 
 :Name_in_opus_utique_oppr rdf:type owl:NamedIndividual ,
-                                   :Not_Acceptable_Under_Governing_Code ,
+                                   :NotAcceptableUnderGoverningCode ,
                                    skos:Concept ;
                           
                           dc:type "Term" ;
                           
-                          skos:broader :Not_Acceptable_Under_Governing_Code .
+                          skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Neotypification
 
 :Neotypification rdf:type owl:NamedIndividual ,
-                          :Change_of_Type ,
+                          :ChangeOfType ,
                           skos:Concept ;
                  
-                 skos:broader :Change_of_Type ;
+                 skos:broader :ChangeOfType ;
 
                  skos:prefLabel "Neotypification"@en ;
 
@@ -1864,7 +1864,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Newer_Homonym
 
 :Newer_Homonym rdf:type owl:NamedIndividual ,
-                        :Not_Acceptable_Under_Governing_Code ,
+                        :NotAcceptableUnderGoverningCode ,
                         skos:Concept ;
                
                 rdfs:comment "General Category for Zoological Junior Homonyms and Botanical Later Homonyms."@en ;
@@ -1890,14 +1890,14 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                
                skos:broader :Nomen_Abortivum ;
 
-               skos:broader :Not_Acceptable_Under_Governing_Code .
+               skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Abortivum
 
 :Nomen_Abortivum rdf:type owl:NamedIndividual ,
-                          :Not_Acceptable_Under_Governing_Code ,
+                          :NotAcceptableUnderGoverningCode ,
                           skos:Concept ;
 
                  skos:prefLabel "Nomen Abortivum"@la ;                 
@@ -1910,7 +1910,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Monstrositatum
 
 :Nomen_Monstrositatum rdf:type owl:NamedIndividual ,
-                               :Not_Acceptable_Under_Governing_Code ,
+                               :NotAcceptableUnderGoverningCode ,
                                skos:Concept ;
 
                       skos:prefLabel "nomen monstrositatum"@la ;
@@ -1935,7 +1935,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Nudem
 
 :Nomen_Nudem rdf:type owl:NamedIndividual ,
-                      :Not_Acceptable_Under_Governing_Code ,
+                      :NotAcceptableUnderGoverningCode ,
                       skos:Concept ;
              
              rdfs:label "nomen nudem"@la ;
@@ -1965,7 +1965,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Oblitum
 
 :Nomen_Oblitum rdf:type owl:NamedIndividual ,
-                        :Not_Acceptable_Under_Governing_Code ,
+                        :NotAcceptableUnderGoverningCode ,
                         skos:Concept ;
                
                rdfs:comment "ICZN Glossary: \"applied after 1 January 2000 to a name, unused since 1899, which as a result of an action taken under Article 23.9.2 does not take precedence over a younger synonym or homonym in prevailing usage; the younger name which takes precedence over the nomen oblitum may be called a nomen protectum (q.v.). The term nomen oblitum was also applied to a disused senior synonym rejected between 6 November 1961 and 1 January 1973 under Article 23b of the Code editions then in force (see Article 23.12.2). Nomina oblita remain available names; see Articles 23.9 and 23.12 for conditions controlling their use as valid names.\""^^xsd:string ,
@@ -1979,14 +1979,14 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                
                dc:type "Term" ;
                
-               skos:broader :Not_Acceptable_Under_Governing_Code .
+               skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Nomen_Oblitum_ICZN_1961to1973
 
 :Nomen_Oblitum_ICZN_1961to1973 rdf:type owl:NamedIndividual ,
-                                        :Not_Acceptable_Under_Governing_Code ,
+                                        :NotAcceptableUnderGoverningCode ,
                                         skos:Concept ;
                                
                                  rdfs:domain [ rdf:type owl:Restriction ;
@@ -2044,9 +2044,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Not_Acceptable_Under_Governing_Code
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#NotAcceptableUnderGoverningCode
 
-:Not_Acceptable_Under_Governing_Code rdf:type owl:NamedIndividual ,
+:NotAcceptableUnderGoverningCode rdf:type owl:NamedIndividual ,
                                               skos:Concept ;
                                      
                                      dc:type "Category" .
@@ -2080,7 +2080,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Potentially_Valid_ICZN
 
 :Potentially_Valid_ICZN rdf:type owl:NamedIndividual ,
-                                 :Acceptable_Under_Governing_Code ,
+                                 :AcceptableUnderGoverningCode ,
                                  skos:Concept ;
 
                         skos:prefLabel "Potentially valid name"@en ;
@@ -2089,14 +2089,14 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
                         dc:type "Term" ;
                         
-                        skos:broader :Acceptable_Under_Governing_Code .
+                        skos:broader :AcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Preoccupied_Name
 
 :Preoccupied_Name rdf:type owl:NamedIndividual ,
-                        :Not_Acceptable_Under_Governing_Code ,
+                        :NotAcceptableUnderGoverningCode ,
                         skos:Concept ;
                
                    skos:prefLabel "Preoccupied Name"@en ;
@@ -2117,7 +2117,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Protected_Name
 
 :Protected_Name rdf:type owl:NamedIndividual ,
-                        :Acceptable_Under_Governing_Code ,
+                        :AcceptableUnderGoverningCode ,
                          skos:Concept ;
                 
                 rdfs:comment "ICZN Glossary: \"applied to a name which has been given precedence over its unused senior synonym or senior homonym relegated to the status of nomen oblitum (q.v., and see Article 23.9.2)\""^^xsd:string ;
@@ -2130,7 +2130,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                 
                 dc:type "Term" ;
                 
-                skos:broader :Acceptable_Under_Governing_Code ;
+                skos:broader :AcceptableUnderGoverningCode ;
                 
                 rdfs:seeAlso :Forgotten_Name .
 
@@ -2170,14 +2170,14 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Reinstated_Name
 
 :Reinstated_Name rdf:type owl:NamedIndividual ,
-                        :Acceptable_Under_Governing_Code ,
+                        :AcceptableUnderGoverningCode ,
                           skos:Concept ;
 
                 skos:prefLabel "reinstated name"@en ;
                  
                  dc:type "Term" ;
                  
-                 skos:broader :Acceptable_Under_Governing_Code .
+                 skos:broader :AcceptableUnderGoverningCode .
 
 
 
@@ -2194,7 +2194,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Rejected_Name
 
 :Rejected_Name rdf:type owl:NamedIndividual ,
-                        :Not_Acceptable_Under_Governing_Code ,
+                        :NotAcceptableUnderGoverningCode ,
                         skos:Concept ;
                
                rdfs:comment "A name that has been rejected by an act of the relevant code governed body (the Zoological Commissioners or a Botanical Congress)."^^xsd:string ;
@@ -2207,7 +2207,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
                :appliesInGoverningCode :ICBN ,
                                        :ICZN ;
                
-               skos:broader :Not_Acceptable_Under_Governing_Code .
+               skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
@@ -2242,9 +2242,9 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Replacement_of_a_name
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#ReplacementOfAName
 
-:Replacement_of_a_name rdf:type owl:NamedIndividual ,
+:ReplacementOfAName rdf:type owl:NamedIndividual ,
                                 skos:Concept ;
                        
                        dc:type "Category" .
@@ -2254,7 +2254,7 @@ Hawksworth, Terms Used in Bionomenclature."""^^xsd:string ;
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Sanctioned_Name
 
 :Sanctioned_Name rdf:type owl:NamedIndividual ,
-                          :Acceptable_Under_Governing_Code ,
+                          :AcceptableUnderGoverningCode ,
                           skos:Concept ;
 
                  skos:prefLabel "Sanctioned Name"@en ;                 
@@ -2271,7 +2271,7 @@ However,  between 1950 and 1981, three works later than Species Plantarum were s
                  
                  skos:scopeNote "ICBN (Mycology)"@en ;
                  
-                 skos:broader :Acceptable_Under_Governing_Code ;
+                 skos:broader :AcceptableUnderGoverningCode ;
                  
                  :appliesInGoverningCode :ICBN .
 
@@ -2298,7 +2298,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Homonym
 
 :Senior_Homonym rdf:type owl:NamedIndividual ,
-                         :Acceptable_Under_Governing_Code ,
+                         :AcceptableUnderGoverningCode ,
                          skos:Concept ;
                 
                           skos:prefLabel "Senior Homonym"@en;
@@ -2333,7 +2333,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Objective_Synonym
 
 :Senior_Objective_Synonym rdf:type owl:NamedIndividual ,
-                                   :Acceptable_Under_Governing_Code ,
+                                   :AcceptableUnderGoverningCode ,
                                    skos:Concept ;
 
                           skos:prefLabel "Senior Objective Synonym"@en;
@@ -2369,7 +2369,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Primary_Homonym
 
 :Senior_Primary_Homonym rdf:type owl:NamedIndividual ,
-                                 :Acceptable_Under_Governing_Code ,
+                                 :AcceptableUnderGoverningCode ,
                                  skos:Concept ;
                           
                         skos:prefLabel "Senior Primary Homonym"@en;
@@ -2406,7 +2406,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Senior_Secondary_Homonym
 
 :Senior_Secondary_Homonym rdf:type owl:NamedIndividual ,
-                                   :Acceptable_Under_Governing_Code ,
+                                   :AcceptableUnderGoverningCode ,
                                    skos:Concept ;
 
                         skos:prefLabel "Senior Secondary Homonym"@en;
@@ -2469,19 +2469,19 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Subsequent_Misspelling
 
 :Subsequent_Misspelling rdf:type owl:NamedIndividual ,
-                                 :Not_Acceptable_Under_Governing_Code ,
+                                 :NotAcceptableUnderGoverningCode ,
                                  skos:Concept ;
                         
                         dc:type "Term" ;
                         
-                        skos:broader :Not_Acceptable_Under_Governing_Code .
+                        skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Substitute_Name
 
 :Substitute_Name rdf:type owl:NamedIndividual ,
-                          :Replacement_of_a_name ,
+                          :ReplacementOfAName ,
                           skos:Concept ;
                  
                  skos:prefLabel "Substitute name"@en ;
@@ -2490,31 +2490,31 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
                  
                  dc:type "Term" ;
                  
-                 skos:broader :Replacement_of_a_name .
+                 skos:broader :ReplacementOfAName .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Superfluous_name
 
 :Superfluous_name rdf:type owl:NamedIndividual ,
-                           :Not_Acceptable_Under_Governing_Code ,
+                           :NotAcceptableUnderGoverningCode ,
                            skos:Concept ;
                   
                   dc:type "Term" ;
                   
-                  skos:broader :Not_Acceptable_Under_Governing_Code .
+                  skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Tautonym_Avoidance
 
 :Tautonym_Avoidance rdf:type owl:NamedIndividual ,
-                             :Replacement_of_a_name ,
+                             :ReplacementOfAName ,
                              skos:Concept ;
                     
                     dc:type "Term" ;
                     
-                    skos:broader :Replacement_of_a_name .
+                    skos:broader :ReplacementOfAName .
 
 
 
@@ -2593,7 +2593,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Unjustified_Emendation
 
 :Unjustified_Emendation rdf:type owl:NamedIndividual ,
-                                 :Not_Acceptable_Under_Governing_Code ,
+                                 :NotAcceptableUnderGoverningCode ,
                                  skos:Concept ;
  
                 rdfs:domain [ rdf:type owl:Restriction ;
@@ -2615,14 +2615,14 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
                         
                         :appliesInGoverningCode :ICZN ;
                         
-                        skos:broader :Not_Acceptable_Under_Governing_Code .
+                        skos:broader :NotAcceptableUnderGoverningCode .
 
 
 
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Valid_ICBN
 
 :Valid_ICBN rdf:type owl:NamedIndividual ,
-                     :Acceptable_Under_Governing_Code ,
+                     :AcceptableUnderGoverningCode ,
                      skos:Concept ;
 
             skos:prefLabel "Valid name"@en ;
@@ -2633,7 +2633,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
             
             skos:scopeNote "ICBN"@en ;
             
-            skos:broader :Acceptable_Under_Governing_Code ;
+            skos:broader :AcceptableUnderGoverningCode ;
             
             :appliesInGoverningCode :ICBN .
 
@@ -2700,7 +2700,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 ###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Validly_Published_ICNP_ICBN
 
 :Validly_Published_ICNP_ICBN rdf:type owl:NamedIndividual ,
-                                      :Acceptable_Under_Governing_Code ,
+                                      :AcceptableUnderGoverningCode ,
                                       skos:Concept ;
                              
                              skos:scopeNote "ICNP"@en ;
@@ -2710,7 +2710,7 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
                              skos:scopeNote "ICBN"@en ,
                                             "ICNP"@en ;
                              
-                             skos:broader :Acceptable_Under_Governing_Code ;
+                             skos:broader :AcceptableUnderGoverningCode ;
                              
                              :appliesInGoverningCode :ICBN ,
                                                      :ICNP .
@@ -2772,9 +2772,9 @@ Korf RP. (1983). \"Sanctioned epithets, sanctioned names, and cardinal principle
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#missapplied_name
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Missapplied_Name
 
-:missapplied_name rdf:type owl:NamedIndividual ,
+:Missapplied_Name rdf:type owl:NamedIndividual ,
                            :TaxonomicEventStatus ,
                            skos:Concept ;
                      
@@ -2787,9 +2787,9 @@ Hawksworth, Terms Used In Bionomenclature"""^^xsd:string ;
 
 
 
-###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#missidentification
+###  http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#Missidentification
 
-:missidentification rdf:type owl:NamedIndividual ,
+:Missidentification rdf:type owl:NamedIndividual ,
                              :TaxonomicEventStatus ,
                              skos:Concept ;
 
@@ -2812,7 +2812,7 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 
                 rdfs:domain [ rdf:type owl:Restriction ;
                               owl:onProperty :isNomenclaturalEventType ;
-                              owl:hasValue :Replacement_of_a_name
+                              owl:hasValue :ReplacementOfAName
                             ] ;
              
              skos:definition "A nom. nov. in the sense of the ICBN, the proposal of a replacement name (a new name for an existing taxon)."@en ;
@@ -2825,7 +2825,7 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
              
              :appliesInGoverningCode :ICBN ;
              
-             skos:broader :Replacement_of_a_name .
+             skos:broader :ReplacementOfAName .
 
 
 
@@ -2852,7 +2852,7 @@ Hawksworth, Terms Used in Bionomenclature"""^^xsd:string ;
 
                 rdfs:domain [ rdf:type owl:Restriction ;
                               owl:onProperty :isNomenclaturalEventType ;
-                              owl:hasValue :Replacement_of_a_name
+                              owl:hasValue :ReplacementOfAName
                             ] ;
              
              skos:broader :New_Scientific_Name .

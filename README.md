@@ -3,6 +3,8 @@ An Ontology for Nomenclatural and Taxonomic Status terms.
 # Available at:
 https://www.purl.org/org.filteredpush/ontologies/taxonomic_nomenclatural_status_terms.owl
 
+Version 0.8 Namespace: http://webprojects.huh.harvard.edu/ontologies/taxonomic_nomenclatural_status_terms.owl#
+
 # Competency questions this ontology is designed to address
 * Queries on the ontology
  * Which nomenclatural status terms are synonyms under different codes (e.g. junior subjective synonym in zoology has the same meaning as later taxonomic synonym in botany)

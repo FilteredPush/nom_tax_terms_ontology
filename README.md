@@ -1,5 +1,9 @@
 # Taxonomic and Nomenclatural Status Terms Ontology
 An Ontology for Nomenclatural and Taxonomic Status terms.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.210535.svg)](https://doi.org/10.5281/zenodo.210535)
+
+
 # Available at:
 https://www.purl.org/org.filteredpush/ontologies/taxonomic_nomenclatural_status_terms.owl
 

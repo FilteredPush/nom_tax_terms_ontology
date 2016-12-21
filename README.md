@@ -23,5 +23,10 @@ Version 0.8 Namespace: http://webprojects.huh.harvard.edu/ontologies/taxonomic_n
  * Given a usage bank and two different name strings, what is the list of opinions in the usage bank that these two name strings represent the same taxon, and what is the list of opinions in the usage bank that these two name strings represent different taxa.
  * Which taxon name usages are senior or earlier homonyms?
 
+Here is a small set of the object properties included in the ontology: 
+
+![Tree of a subset of the object properites below related to name.](https://raw.githubusercontent.com/FilteredPush/tax_nom_terms_ontology/master/docs/subset_of_object_properties.png "A subset of the object properties in this ontology.")
+
+
 # Funding
 Development of this ontology was driven by a Harvard-Australia Fellowship to James A. Macklin and Paul J. Morris, with additional support from GBIF for the Nomina VIII meeting at which the terms vocaublary which triggered the creation of this ontology was discussed.  This ontology was further developed under the FilteredPush project, NSF DBI 0960535.
